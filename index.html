@@ -1,13 +1,1954 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jordan_portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&amp;family=Silkscreen:wght@400;700&amp;family=Pixelify+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; height:100%; overflow:hidden; background:#FFB3D4; }
+  * { box-sizing:border-box; }
+  a { color:#D14E86; }
+  a:hover { color:#7A1F45; }
+  ::selection { background:#FF6FA5; color:#fff; }
+  .om-noscrollbar::-webkit-scrollbar { display:none; width:0; height:0; }
+  .om-pinkscroll { scrollbar-color: #FF8FBE #FFEAF4; }
+  .om-pinkscroll::-webkit-scrollbar { width:16px; height:16px; background:#FFEAF4; }
+  .om-pinkscroll::-webkit-scrollbar-track { background:#FFEAF4; border-left:1px solid #E9A9C8; }
+  .om-pinkscroll::-webkit-scrollbar-thumb { background:#FFB2D5; border-top:2px solid #FFF6FA; border-left:2px solid #FFF6FA; border-right:2px solid #C94C81; border-bottom:2px solid #C94C81; }
+  .om-pinkscroll::-webkit-scrollbar-thumb:hover { background:#FF9EC9; }
+  .om-pinkscroll::-webkit-scrollbar-corner { background:#FFEAF4; }
+  @page { size:letter; margin:0.55in 0.6in; }
+  #resume-print { display:none; }
+  @media print {
+    html, body { overflow:visible !important; height:auto !important; background:#fff !important; }
+    body[data-printing] > *:not(#resume-print) { display:none !important; }
+    body[data-printing] #resume-print { display:block !important; }
+    #resume-print > div { width:auto !important; max-width:none !important; margin:0 !important; padding:0 !important; border:0 !important; box-shadow:none !important; background:#fff !important; }
+    #resume-print ul { margin-top:2px !important; }
+    #resume-print li, #resume-print ul { break-inside:avoid; page-break-inside:avoid; }
+  }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+<div style="position:relative;width:100vw;height:100vh;overflow:hidden;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;cursor:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cpath d='M4 2 L4 19 L9 14 L12 22 L16 21 L13 13 L19 13 Z' fill='%23ffffff' stroke='%237A1F45' stroke-width='2.5' stroke-linejoin='miter'/%3E%3C/svg%3E&quot;) 3 2, auto;" onPointerDown="{{ onDesktopDown }}">
+
+  <div style="position:absolute;inset:0;background:#FF96C4 url('./wallpaper-pink-v3.png') center/cover no-repeat;"></div>
+
+  <sc-for list="{{ icons }}" as="ic" hint-placeholder-count="7">
+    <div style="position:absolute;width:78px;padding:4px 2px 3px;display:flex;flex-direction:column;align-items:center;gap:4px;user-select:none;touch-action:none;left:{{ ic.left }}px;top:{{ ic.top }}px;background:{{ ic.cellBg }};outline:{{ ic.cellOutline }};z-index:{{ ic.z }}" onPointerDown="{{ ic.onPointerDown }}" onDoubleClick="{{ ic.onDoubleClick }}">
+      <div style="position:relative;width:38px;height:38px;filter:{{ ic.iconFilter }}">
+        <div style="width:1px;height:1px;box-shadow:{{ ic.shadow }};transform:scale(1.2);transform-origin:0 0;"></div>
+      </div>
+      <div style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:11px;line-height:1.35;letter-spacing:0;text-align:center;padding:1px 3px;text-shadow:{{ ic.textShadow }};color:{{ ic.labelColor }};background:{{ ic.labelBg }};border:{{ ic.labelBorder }}">{{ ic.label }}</div>
+    </div>
+  </sc-for>
+
+  <sc-if value="{{ dlgOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);width:min(560px,92vw);z-index:9600;background:#EDEDED;border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;border-right:2px solid #8E8E8E;border-bottom:2px solid #8E8E8E;box-shadow:0 0 0 1px #7A1F45,7px 7px 0 rgba(122,31,69,.28);display:flex;flex-direction:column;">
+      <div style="display:flex;align-items:center;padding:4px 4px 4px 7px;background:linear-gradient(#FFF0F7,#FFA9CE 55%,#F07BAE);border-bottom:1px solid #D98BB4;touch-action:none;" onPointerDown="{{ onDlgDown }}">
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#3A2130;">{{ dlgTitle }}</span>
+        <div style="width:26px;height:18px;display:flex;align-items:center;justify-content:center;background:linear-gradient(#F2837F,#C93A38);border-top:1px solid #FFD3D2;border-left:1px solid #FFD3D2;border-right:1px solid #7E1D1C;border-bottom:1px solid #7E1D1C;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#FFF;line-height:1;" onClick="{{ onDlgClose }}">×</div>
+      </div>
+      <div style="display:flex;gap:14px;padding:16px 22px 26px;background:#EDEDED;">
+        <div style="width:34px;height:34px;flex:0 0 34px;position:relative;">
+          <div style="width:1px;height:1px;box-shadow:{{ dlgIconShadow }};transform:scale(1.06);transform-origin:0 0;"></div>
+        </div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:70px;padding:0 6px;">
+          <div style="font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:19px;line-height:1.45;color:#1A1A1A;text-align:center;text-wrap:pretty;">{{ dlgMsg }}</div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;padding:0 18px 16px;background:#EDEDED;">
+        <div style="min-width:82px;padding:4px 12px;text-align:center;background:#E4E4E4;border-top:1px solid #FFFFFF;border-left:1px solid #FFFFFF;border-right:1px solid #7E7E7E;border-bottom:1px solid #7E7E7E;outline:1px solid #6D6D6D;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#1A1A1A;" onClick="{{ onDlgClose }}"><span style="text-decoration:underline;">O</span>K</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ docWinOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;display:flex;flex-direction:column;background:#FFE3F0;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,6px 6px 0 rgba(122,31,69,.28);z-index:8400;width:{{ docWinWidth }};height:{{ docWinHeight }};left:{{ docWinLeft }};top:{{ docWinTop }};visibility:{{ docWinVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:5px 5px 5px 7px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onDocWinDown }}">
+        <div style="width:17px;height:17px;flex:0 0 17px;background:#7A1F45;border:1px solid #FFC0DC;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:12px;font-weight:700;color:#FFD9EA;line-height:1;">W</div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;">Work Experience — Microsoft Word</span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onDocMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onDocMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onDocClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;padding:5px 10px;background:#FFEAF4;border-bottom:1px solid #F0B6D2;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#8E1B54;">
+        <span style="text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;">File</span>
+        <span style="text-decoration:underline;text-underline-offset:3px;">Edit</span><span style="text-decoration:underline;text-underline-offset:3px;">View</span><span style="text-decoration:underline;text-underline-offset:3px;">Insert</span><span style="text-decoration:underline;text-underline-offset:3px;">Format</span><span style="text-decoration:underline;text-underline-offset:3px;">Tools</span><span style="text-decoration:underline;text-underline-offset:3px;">Table</span><span style="text-decoration:underline;text-underline-offset:3px;">Window</span><span style="text-decoration:underline;text-underline-offset:3px;">Help</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;background:#FFE6F2;border-bottom:1px solid #F0B6D2;">
+        <sc-for list="{{ wordTools }}" as="w" hint-placeholder-count="10">
+          <div style="width:22px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Tahoma,sans-serif;font-size:11px;color:#A83C6E;">{{ w }}</div>
+        </sc-for>
+        <div style="flex:1;"></div>
+        <div style="display:flex;align-items:center;gap:6px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">100%<span style="font-size:9px;">▼</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;background:#FFE6F2;border-bottom:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">Normal<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:170px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">Arial<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:54px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">11<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;gap:4px;margin-left:6px;">
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;font-weight:700;color:#7A1F45;">B</div>
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;font-style:italic;color:#7A1F45;">I</div>
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;text-decoration:underline;color:#7A1F45;">U</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:stretch;height:22px;background:#FFF0F7;border-bottom:1px solid #E9A9C8;">
+        <div style="flex:1;position:relative;background:repeating-linear-gradient(90deg,#F3A8CC 0 1px,transparent 1px 6px),repeating-linear-gradient(90deg,#D95E97 0 1px,transparent 1px 78px);">
+          <sc-for list="{{ rulerMarks }}" as="m" hint-placeholder-count="9">
+            <span style="position:absolute;top:3px;font-family:'Courier New',monospace;font-size:10px;color:#8E1B54;background:#FFF0F7;padding:0 3px;left:{{ m.left }}px;">{{ m.n }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;background:#E8A2C4;">
+        <div style="flex:0 0 22px;background:repeating-linear-gradient(180deg,#F3A8CC 0 1px,#FFF0F7 1px 6px);border-right:1px solid #E9A9C8;"></div>
+        <div class="om-noscrollbar" ref="{{ docScrollRef }}" onScroll="{{ onDocScroll }}" style="flex:1;min-width:0;overflow-y:scroll;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;padding:22px 0 44px;">
+        <div style="width:820px;max-width:92%;margin:0 auto;background:linear-gradient(160deg,#FFF6FB 0%,#FFE3F3 55%,#FFD2EC 100%);border:3px solid #C1247A;box-shadow:6px 6px 0 rgba(122,31,69,.3);padding:34px 44px 48px;position:relative;font-family:'Comic Neue',Tahoma,sans-serif;color:#4A1029;">
+          <div style="position: absolute; top: 3px; font-size: 26px; color: #FF8CC8; letter-spacing: 6px; left: 689px">✦✧✦</div>
+          <div style="position:absolute;top:180px;left:14px;font-size:18px;color:#FFA6D6;">✦</div>
+          <div style="position:absolute;bottom:140px;right:18px;font-size:22px;color:#FFA6D6;">✧</div>
+
+          <div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;">
+            <div style="flex:1;min-width:300px;">
+              <div style="display: inline-block; padding: 4px 12px; background: #C1247A; color: #FFE9F5; font-family: 'Silkscreen',monospace; font-size: 14px; letter-spacing: .16em; transform: rotate(-2deg); width: 215px; height: 28px">★ work resume 2026 ★</div>
+              <div style="margin-top:14px;font-family:'Comic Neue',sans-serif;font-weight:700;font-size:62px;line-height:.92;color:#C1247A;text-shadow:3px 3px 0 #FFF6FB,6px 6px 0 #FF8CC8;">jordan<br>duncan</div>
+              <div style="margin-top: 16px; display: inline-block; padding: 5px 12px; background: #FFF6FB; border: 2px dashed #E0498B; font-size: 17px; color: #8E1B54">Computer Science Major with Cybersecurity Minor · Graduating May 2027</div>
+            </div>
+            <div style="flex:0 0 288px;padding:14px 16px;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 #E0498B;font-family:'Silkscreen',monospace;font-size:12px;line-height:2.4;color:#8E1B54;white-space:nowrap;">
+              <div style="font-size: 12px">♡ 417-737-1137</div>
+              <div style="font-size: 12px">♡ jordan4duncan@gmail.com</div><div style="font-size: 12px">♡ Joplin, Missouri</div>
+              
+              <div style="font-size: 12px">♡ linkedin.com/in/jordanmduncan</div>
+              <div style="font-size: 12px">♡ github.com/jordan-can-dunk</div>
+            </div>
+          </div>
+
+          <div style="margin-top:30px;display:flex;align-items:center;gap:10px;">
+            <span style="font-family:'Silkscreen',monospace;font-size:16px;color:#C1247A;">★ PROFILE</span>
+            <div style="flex:1;height:6px;background:repeating-linear-gradient(90deg,#FF8CC8 0 8px,transparent 8px 16px);"></div>
+          </div>
+          <p style="margin:12px 0 0;padding:16px 18px;background:#FFF6FB;border:2px solid #FFB0DA;border-radius:14px;font-size:16px;line-height:1.7;text-wrap:pretty;">Dedicated student seeking a challenging full-time opportunity where I can apply my skills and knowledge to drive real impact. I'm excited about working on meaningful projects, receiving constructive feedback, and contributing to a team's success. I'm extremely hardworking and eager to learn more about cybersecurity and AI, and I'm looking for a dynamic environment that fosters professional growth, networking opportunities, and hands-on experience.</p>
+
+          <div style="margin-top:30px;display:flex;align-items:center;gap:10px;">
+            <span style="font-family:'Silkscreen',monospace;font-size:16px;color:#C1247A;">★ EXPERIENCE</span>
+            <div style="flex:1;height:6px;background:repeating-linear-gradient(90deg,#FF8CC8 0 8px,transparent 8px 16px);"></div>
+          </div>
+
+          
+
+          <div style="margin-top:16px;padding:18px;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:5px 5px 0 rgba(224,73,139,.5);">
+            <div style="display: inline-block; padding: 3px 10px; background: #FFDCEF; border: 2px solid #E0498B; font-family: 'Silkscreen',monospace; font-size: 13px; color: #8E1B54; transform: rotate(-1.5deg)">JUN 2026 — JUL 2026</div>
+            <div style="margin-top:10px;font-weight:700;font-size:22px;color:#8E1B54;">Creative Technology Intern</div>
+            <div style="font-size:14px;font-weight:700;color:#D14E86;margin-top:2px;">Dimensional Innovations · Overland Park, KS · On-site</div>
+            <ul style="margin:12px 0 0;padding-left:22px;font-size:15px;line-height:1.65;">
+              <li style="margin-bottom:8px;">Built and shipped three production projects: a full-stack web application, an internal administration/API tool, and a hardware-integrated museum exhibit.</li>
+              <li style="margin-bottom:8px;">Built an internal support ticket filing and search tool in Django, including custom data modeling, a Django REST Framework API, and production performance improvements.</li>
+              <li style="margin-bottom:8px;">Optimized a production N+1 query issue, reducing database queries from 36 to 1, and diagnosed an intermittent production 500 error caused by a database connection-pooling mismatch on Heroku.</li>
+              <li style="margin-bottom:8px;">Designed and built a Vue, Django, and Leaflet web application mapping local Kansas City locations for interns to discover.</li>
+              <li style="margin-bottom:8px;">Pitched and delivered the Kansas City mapping application to Dimensional Innovations and the Kansas City Area Development Council (TeamKC) to support regional intern talent retention.</li>
+              <li style="margin-bottom:8px;">Developed a Vue, Electron, TypeScript, and Phidgets hardware-integrated application for a permanent museum exhibit.</li>
+              <li style="margin-bottom:8px;">Programmed sensor-based touch rings that trigger synchronized video and lighting.</li>
+              <li>Communicated directly with clients throughout projects, translating technical tradeoffs and constraints into plain language and turning feedback into concrete product changes.</li>
+            </ul>
+          </div><div style="margin-top:18px;padding:18px;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:5px 5px 0 rgba(224,73,139,.5);">
+            <div style="display: inline-block; padding: 3px 10px; background: #FFDCEF; border: 2px solid #E0498B; font-family: 'Silkscreen',monospace; font-size: 13px; color: #8E1B54; transform: rotate(1.5deg)">OCT 2025 — MAY 2026</div>
+            <div style="margin-top:10px;font-weight:700;font-size:22px;color:#8E1B54;">University Computer Science &amp; Mathematics Tutor</div>
+            <div style="font-size:14px;font-weight:700;color:#D14E86;margin-top:2px;">University of Central Missouri · Warrensburg, MO · On-site</div>
+            <ul style="margin:12px 0 0;padding-left:22px;font-size:15px;line-height:1.65;">
+              <li>Provided individualized tutoring to University of Central Missouri students, clarifying complex concepts and supporting academic success in computer science and mathematics courses.</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:30px;display:flex;align-items:center;gap:10px;">
+            <span style="font-family:'Silkscreen',monospace;font-size:16px;color:#C1247A;">★ TECHNICAL SKILLS</span>
+            <div style="flex:1;height:6px;background:repeating-linear-gradient(90deg,#FF8CC8 0 8px,transparent 8px 16px);"></div>
+          </div>
+          <div style="margin-top:14px;display:grid;gap:10px;font-size:15px;line-height:1.6;">
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF62B0;"><strong style="color:#C1247A;">Programming:</strong> Python · Java · C# · JavaScript · TypeScript · SQL · HTML</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF8CC8;"><strong style="color:#C1247A;">Frameworks &amp; libraries:</strong> Django · Django REST Framework · Django Admin/CMS · Vue.js · React · Pinia · Node.js · Electron.js</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF62B0;"><strong style="color:#C1247A;">AI &amp; emerging technology:</strong> AI Agents · Generative AI · AI Workflows</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF8CC8;"><strong style="color:#C1247A;">Databases:</strong> Database Management Systems · Database Development · SQL · Data Modeling</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF62B0;"><strong style="color:#C1247A;">DevOps &amp; deployment:</strong> Docker · CI/CD · Deployment · Heroku · Git · GitHub</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF8CC8;"><strong style="color:#C1247A;">Web development:</strong> Progressive Web Apps (PWA) · Tailwind CSS · Vite</div>
+            <div style="padding:10px 14px;background:#FFF6FB;border-left:6px solid #FF62B0;"><strong style="color:#C1247A;">Hardware &amp; systems:</strong> Hardware/Software Integration · Phidgets · RISC-V</div>
+          </div>
+        </div>
+        </div>
+        <div style="flex:0 0 16px;display:flex;flex-direction:column;background:#FFEAF4;border-left:1px solid #E9A9C8;user-select:none;">
+          <div style="flex:0 0 16px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#8E1B54;background:#FFD9EA;border-bottom:1px solid #E9A9C8;" onPointerDown="{{ onDocScrollUp }}">▲</div>
+          <div ref="{{ docTrackRef }}" style="flex:1;min-height:0;position:relative;background:repeating-linear-gradient(45deg,#FFDCEF 0 2px,#FFF0F7 2px 4px);" onPointerDown="{{ onDocTrackDown }}">
+            <div style="position:absolute;left:0;right:0;background:#F5A9CD;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #C97BA3;border-bottom:1px solid #C97BA3;top:{{ docThumbTop }};height:{{ docThumbHeight }}" onPointerDown="{{ onDocThumbDown }}"></div>
+          </div>
+          <div style="flex:0 0 16px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#8E1B54;background:#FFD9EA;border-top:1px solid #E9A9C8;" onPointerDown="{{ onDocScrollDown }}">▼</div>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:18px;padding:3px 10px;background:#FFEAF4;border-top:1px solid #F0B6D2;font-family:'Courier New',monospace;font-size:11px;color:#7A1F45;">
+        <span>Page 1</span><span>Sec 1</span><span>1/1</span><span>At 1"</span><span>Ln 1</span><span>Col 1</span>
+        <div style="flex:1;"></div>
+        <span>English (U.S.)</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ eduWinOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;display:flex;flex-direction:column;background:#FFE3F0;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,6px 6px 0 rgba(122,31,69,.28);z-index:8500;width:{{ eduWinWidth }};height:{{ eduWinHeight }};left:{{ eduWinLeft }};top:{{ eduWinTop }};visibility:{{ eduWinVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:5px 5px 5px 7px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onEduWinDown }}">
+        <div style="width:17px;height:17px;flex:0 0 17px;background:#7A1F45;border:1px solid #FFC0DC;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:12px;font-weight:700;color:#FFD9EA;line-height:1;">W</div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;">Academic Experience — Microsoft Word</span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onEduMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onEduMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onEduClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;padding:5px 10px;background:#FFEAF4;border-bottom:1px solid #F0B6D2;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#8E1B54;">
+        <span style="text-decoration:underline;text-underline-offset:3px;">File</span><span style="text-decoration:underline;text-underline-offset:3px;">Edit</span><span style="text-decoration:underline;text-underline-offset:3px;">View</span><span style="text-decoration:underline;text-underline-offset:3px;">Insert</span><span style="text-decoration:underline;text-underline-offset:3px;">Format</span><span style="text-decoration:underline;text-underline-offset:3px;">Tools</span><span style="text-decoration:underline;text-underline-offset:3px;">Table</span><span style="text-decoration:underline;text-underline-offset:3px;">Window</span><span style="text-decoration:underline;text-underline-offset:3px;">Help</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;background:#FFE6F2;border-bottom:1px solid #F0B6D2;">
+        <sc-for list="{{ wordTools }}" as="w" hint-placeholder-count="10">
+          <div style="width:22px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Tahoma,sans-serif;font-size:11px;color:#A83C6E;">{{ w }}</div>
+        </sc-for>
+        <div style="flex:1;"></div>
+        <div style="display:flex;align-items:center;gap:6px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">100%<span style="font-size:9px;">▼</span></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;background:#FFE6F2;border-bottom:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">
+        <div style="display:flex;align-items:center;justify-content:space-between;width:100px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">Normal<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:170px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">Comic Sans MS<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;width:54px;padding:2px 6px;background:#FFF6FA;border:1px solid #C97BA3;">11<span style="font-size:9px;">▼</span></div>
+        <div style="display:flex;gap:4px;margin-left:6px;">
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;font-weight:700;color:#7A1F45;">B</div>
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;font-style:italic;color:#7A1F45;">I</div>
+          <div style="width:24px;height:20px;display:flex;align-items:center;justify-content:center;background:#FFE9F3;border:1px solid #E9A9C8;font-family:Georgia,serif;text-decoration:underline;color:#7A1F45;">U</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:stretch;height:22px;background:#FFF0F7;border-bottom:1px solid #E9A9C8;">
+        <div style="flex:1;position:relative;background:repeating-linear-gradient(90deg,#F3A8CC 0 1px,transparent 1px 6px),repeating-linear-gradient(90deg,#D95E97 0 1px,transparent 1px 78px);">
+          <sc-for list="{{ rulerMarks }}" as="m" hint-placeholder-count="9">
+            <span style="position:absolute;top:3px;font-family:'Courier New',monospace;font-size:10px;color:#8E1B54;background:#FFF0F7;padding:0 3px;left:{{ m.left }}px;">{{ m.n }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;background:#E8A2C4;">
+        <div style="flex:0 0 22px;background:repeating-linear-gradient(180deg,#F3A8CC 0 1px,#FFF0F7 1px 6px);border-right:1px solid #E9A9C8;"></div>
+        <div class="om-noscrollbar" ref="{{ eduScrollRef }}" onScroll="{{ onEduScroll }}" style="flex:1;min-width:0;overflow-y:scroll;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;padding:22px 0 44px;">
+          <div style="width:820px;max-width:92%;margin:0 auto;background:linear-gradient(160deg,#FFF6FB 0%,#FFE3F3 55%,#FFD2EC 100%);border:3px solid #C1247A;box-shadow:6px 6px 0 rgba(122,31,69,.3);padding:0 0 48px;position:relative;font-family:'Comic Neue',Tahoma,sans-serif;color:#4A1029;">
+
+            <div style="display:flex;align-items:stretch;border-bottom:3px solid #C1247A;background:repeating-linear-gradient(90deg,#FFD2EC 0 16px,#FFE9F5 16px 32px);">
+              <div style="flex:1;padding:26px 30px 22px;">
+                <div style="font-family: 'Silkscreen',monospace; font-size: 16px; letter-spacing: .18em; color: #C1247A; text-align: left">✦ ACADEMIC RESUME ✦</div>
+                <div style="margin-top:10px;font-weight:700;font-size:48px;line-height:.94;color:#C1247A;text-shadow:2px 2px 0 #FFF6FB,4px 4px 0 #FF8CC8;">jordan duncan</div>
+                
+              </div>
+              <div style="flex:0 0 150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#C1247A;color:#FFE9F5;font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:.14em;text-align:center;line-height:2;">
+                <div style="font-size: 12px">EXPECTED Grad date:</div>
+                <div style="font-size:18px;">MAY 2027</div>
+                <div style="font-size:16px;letter-spacing:4px;">♡♡♡</div>
+              </div>
+            </div>
+
+            <div style="padding:26px 30px 0;">
+              <div style="display:flex;flex-wrap:wrap;gap:16px;">
+                <div style="flex:1;min-width:300px;padding:18px;background:#FFF6FB;border:3px solid #C1247A;box-shadow:5px 5px 0 rgba(224,73,139,.5);">
+                  <div style="display:inline-block;margin-bottom:10px;padding:3px 10px;background:#FF62B0;color:#FFF6FB;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:.12em;transform:rotate(-2deg);">NOW ★</div>
+                  <div style="font-weight:700;font-size:21px;color:#8E1B54;line-height:1.2;">University of Central Missouri (UCM)</div>
+                  <div style="font-size:13px;font-weight:700;color:#D14E86;margin-top:3px;">Warrensburg, MO</div>
+                  <div style="margin-top:12px;font-size:15px;line-height:1.6;">Bachelor of Science in Computer Science, Software Development Concentration</div>
+                  <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;font-family:'Silkscreen',monospace;font-size:12px;color:#8E1B54;">
+                    <span style="padding:3px 8px;background:#FFDCEF;border:2px solid #E0498B;">Minor: Cybersecurity</span>
+                    <span style="padding:3px 8px;background:#FFDCEF;border:2px solid #E0498B;">Expected May 2027</span>
+                    <span style="padding:3px 8px;background:#C1247A;color:#FFE9F5;border:2px solid #8E1B54;">GPA 4.0/4.0</span>
+                  </div>
+                  <div style="margin-top:12px;font-size:14px;color:#8E1B54;">★ UCM Honors College</div>
+                </div>
+                <div style="flex:1;min-width:300px;padding:18px;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:5px 5px 0 rgba(224,73,139,.35);">
+                  <div style="display:inline-block;margin-bottom:10px;padding:3px 10px;background:#FFDCEF;border:2px solid #E0498B;color:#8E1B54;font-family:'Silkscreen',monospace;font-size:12px;letter-spacing:.12em;transform:rotate(2deg);">transferred from</div>
+                  <div style="font-weight:700;font-size:21px;color:#8E1B54;line-height:1.2;">Missouri Southern State University (MSSU)</div>
+                  <div style="font-size:13px;font-weight:700;color:#D14E86;margin-top:3px;">Joplin, MO</div>
+                  <div style="margin-top:12px;font-size:15px;line-height:1.6;">Bachelor of Science in Computer Science and Computational Mathematics&nbsp;</div>
+                  <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;font-family:'Silkscreen',monospace;font-size:12px;color:#8E1B54;">
+                    <span style="padding:3px 8px;background:#FFDCEF;border:2px solid #E0498B;">Aug. 2023 – May 2025</span>
+                    <span style="padding:3px 8px;background:#C1247A;color:#FFE9F5;border:2px solid #8E1B54;">GPA 4.0/4.0</span>
+                  </div>
+                  <div style="margin-top:12px;font-size:14px;color:#8E1B54;">★ MSSU Honors Program</div>
+                </div>
+              </div>
+
+              <div style="margin-top:28px;display:flex;align-items:center;gap:10px;">
+                <span style="padding:4px 12px;background:#C1247A;color:#FFE9F5;font-family:'Silkscreen',monospace;font-size:14px;letter-spacing:.14em;">RELEVANT COURSEWORK</span>
+                <div style="flex:1;height:6px;background:repeating-linear-gradient(90deg,#FF8CC8 0 8px,transparent 8px 16px);"></div>
+              </div>
+              <div style="margin-top:14px;display:grid;gap:12px;">
+                <div style="padding:14px 16px;background:#FFF6FB;border:2px dashed #E0498B;">
+                  <div style="font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:.1em;color:#C1247A;">♢ COMPUTER SCIENCE &amp; SOFTWARE DEVELOPMENT</div>
+                  <div style="margin-top:8px;font-size:14.5px;line-height:1.7;">Data Structures • Discrete Structures • Software Engineering • Programming Languages • C and UNIX • Computer Organization &amp; Architecture • Database Theory &amp; Applications • Web Applications • Programming I &amp; II • Python Programming</div>
+                </div>
+                <div style="padding:14px 16px;background:#FFF6FB;border:2px dashed #E0498B;">
+                  <div style="font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:.1em;color:#C1247A;">♢ ARTIFICIAL INTELLIGENCE &amp; CYBERSECURITY</div>
+                  <div style="margin-top:8px;font-size:14.5px;line-height:1.7;">Machine Learning • Practical AI • Secure Programming • Secure Software Engineering • Computer Networking • Information Systems • Intro to Quantum Computing</div>
+                </div>
+                <div style="padding:14px 16px;background:#FFF6FB;border:2px dashed #E0498B;">
+                  <div style="font-family:'Silkscreen',monospace;font-size:13px;letter-spacing:.1em;color:#C1247A;">♢ MATHEMATICS</div>
+                  <div style="margin-top:8px;font-size:14.5px;line-height:1.7;">Calculus/Analytic Geometry I, II &amp; III</div>
+                </div>
+              </div>
+
+              <div style="margin-top:30px;display:flex;align-items:center;gap:10px;">
+                <span style="padding:4px 12px;background:#C1247A;color:#FFE9F5;font-family:'Silkscreen',monospace;font-size:14px;letter-spacing:.14em;">ACADEMIC LEADERSHIP &amp; ACTIVITIES</span>
+                <div style="flex:1;height:6px;background:repeating-linear-gradient(90deg,#FF8CC8 0 8px,transparent 8px 16px);"></div>
+              </div>
+
+              <div style="margin-top:16px;display:grid;gap:14px;">
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF62B0;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">Association for Computing Machinery — President</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">UNIVERSITY OF CENTRAL MISSOURI</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">JAN. 2026 – PRESENT</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">Lead UCM's student computing organization and organize technical, academic, and professional development events.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF8CC8;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">MuleHacks — Operations Lead</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">UNIVERSITY OF CENTRAL MISSOURI</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">2026 – PRESENT</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">A small committee of students and I are planning our University's first ever hackathon. I am in charge of coordinating event logistics, workshops, sponsors, networking opportunities, and helping with other miscellaneous responsibilities.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF62B0;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">CyberMules — Member</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">UNIVERSITY OF CENTRAL MISSOURI</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">AUG. 2026 – PRESENT</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">Member of a cybersecurity club for students interested in learning with and socializing alongside peers in the field. Preparing to compete in CTFs and gaining real-world applicable cybersecurity knowledge outside the classroom.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF8CC8;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">UCM Honors College — Honors Student</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">UNIVERSITY OF CENTRAL MISSOURI</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">2025 – PRESENT</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">Pursue interdisciplinary honors coursework and academic experiences emphasizing critical thinking, exploration, and emerging technologies.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF62B0;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">Humane's Best Friend — Founder &amp; President</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">MISSOURI SOUTHERN STATE UNIVERSITY</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">2023 – 2025</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">Founded a student organization that connected students with local animal shelter volunteer opportunities and organized recurring service events.</div>
+                  </div>
+                </div>
+                <div style="display:flex;gap:0;background:#FFF6FB;border:3px solid #FF8CC8;box-shadow:4px 4px 0 rgba(224,73,139,.4);">
+                  <div style="flex:0 0 12px;background:#FF8CC8;"></div>
+                  <div style="flex:1;padding:14px 16px;">
+                    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;">
+                      <div style="flex:1;min-width:220px;">
+                        <div style="font-weight:700;font-size:19px;color:#8E1B54;">MSSU Honors Program — Honors Student</div>
+                        <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#D14E86;margin-top:5px;">MISSOURI SOUTHERN STATE UNIVERSITY</div>
+                      </div>
+                      <div style="font-family:'Silkscreen',monospace;font-size:12px;color:#C1247A;">2023 – 2025</div>
+                    </div>
+                    <div style="margin-top:8px;font-size:14.5px;line-height:1.65;">Completed interdisciplinary Honors coursework and service learning focused on critical thinking, philosophical questions, global perspectives, and community engagement.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:0 0 16px;display:flex;flex-direction:column;background:#FFEAF4;border-left:1px solid #E9A9C8;user-select:none;">
+          <div style="flex:0 0 16px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#8E1B54;background:#FFD9EA;border-bottom:1px solid #E9A9C8;" onPointerDown="{{ onEduScrollUp }}">▲</div>
+          <div ref="{{ eduTrackRef }}" style="flex:1;min-height:0;position:relative;background:repeating-linear-gradient(45deg,#FFDCEF 0 2px,#FFF0F7 2px 4px);" onPointerDown="{{ onEduTrackDown }}">
+            <div style="position:absolute;left:0;right:0;background:#F5A9CD;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #C97BA3;border-bottom:1px solid #C97BA3;top:{{ eduThumbTop }};height:{{ eduThumbHeight }}" onPointerDown="{{ onEduThumbDown }}"></div>
+          </div>
+          <div style="flex:0 0 16px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#8E1B54;background:#FFD9EA;border-top:1px solid #E9A9C8;" onPointerDown="{{ onEduScrollDown }}">▼</div>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:18px;padding:3px 10px;background:#FFEAF4;border-top:1px solid #F0B6D2;font-family:'Courier New',monospace;font-size:11px;color:#7A1F45;">
+        <span>Page 1</span><span>Sec 1</span><span>1/1</span><span>At 1"</span><span>Ln 1</span><span>Col 1</span>
+        <div style="flex:1;"></div>
+        <span>English (U.S.)</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ ieOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;background:#FFF6FA;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,5px 5px 0 rgba(122,31,69,.28);z-index:8300;display:flex;flex-direction:column;width:{{ ieWidth }};max-width:{{ ieMaxW }};height:{{ ieHeight }};left:{{ ieLeft }};top:{{ ieTop }};visibility:{{ ieVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 4px 4px 6px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onIeDown }}">
+        <div style="position:relative;width:18px;height:18px;flex:0 0 18px;overflow:hidden;">
+          <div style="width:1px;height:1px;box-shadow:{{ ieIconShadow }};transform:scale(.56);transform-origin:0 0;"></div>
+        </div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><a href="{{ ieUrl }}" style="color:#E2B5C8">{{ ieUrl }} — Microsoft Internet Explorer</a></span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onIeMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onIeMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onIeClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;padding:3px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#5C1533;">
+        <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Favorites</span><span>Tools</span><span>Help</span>
+      </div>
+      <div style="display:flex;align-items:flex-end;gap:2px;padding:5px 6px 4px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;">
+        <sc-for list="{{ ieTools }}" as="t" hint-placeholder-count="9">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:62px;padding:2px 0;font-family:Tahoma,sans-serif;font-size:11px;color:{{ t.color }};opacity:{{ t.opacity }}">
+            <div style="width:24px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:{{ t.disc }};border:1px solid {{ t.ring }};font-size:13px;line-height:1;color:{{ t.glyphColor }}">{{ t.glyph }}</div>
+            <span>{{ t.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:12px;color:#5C1533;">
+        <span>Address</span>
+        <div style="flex:1;display:flex;align-items:center;gap:6px;padding:2px 6px;background:#FFF6FA;border-top:1px solid #A83C6E;border-left:1px solid #A83C6E;border-right:1px solid #FFF6FA;border-bottom:1px solid #FFF6FA;">
+          <div style="position:relative;width:14px;height:14px;overflow:hidden;flex:0 0 14px;">
+            <div style="width:1px;height:1px;box-shadow:{{ ieIconShadow }};transform:scale(.44);transform-origin:0 0;"></div>
+          </div>
+          <span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"><a href="{{ ieUrl }}">{{ ieUrl }}</a></span>
+          <span style="flex:0 0 16px;height:16px;display:flex;align-items:center;justify-content:center;background:#FFDFEE;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #A83C6E;border-bottom:1px solid #A83C6E;font-size:9px;">▼</span>
+        </div>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;background:#FFF6FA;border-top:1px solid #F0B6D2;">
+        <div class="om-pinkscroll" style="flex:1;min-width:0;overflow:auto;background:#FFFDFE;">
+          <div style="display:flex;align-items:stretch;min-height:100%;">
+            <div style="flex:0 0 168px;padding:14px 10px 30px;background:#FFF1F7;border-right:1px solid #F3CBDF;">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-bottom:14px;">
+                <div style="position:relative;width:56px;height:56px;overflow:hidden;">
+                  <div style="width:1px;height:1px;box-shadow:{{ worldShadow }};transform:scale(1.75);transform-origin:0 0;"></div>
+                </div>
+                <div style="font-family:Georgia,'Times New Roman',serif;font-size:13px;letter-spacing:.14em;color:#7A1F45;text-transform:uppercase;">Projectpedia</div>
+                <div style="font-family: Georgia,serif; font-size: 11px; font-style: italic; color: #B0447C">Free Project Presentations</div>
+              </div>
+              <sc-for list="{{ wikiNav }}" as="g" hint-placeholder-count="4">
+                <div style="padding:10px 0 4px;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;border-top:1px solid #F3CBDF;">{{ g.title }}</div>
+                <div style="display:flex;flex-direction:column;gap:3px;">
+                  <sc-for list="{{ g.links }}" as="l" hint-placeholder-count="5">
+                    <a href="#" style="font-family:Tahoma,sans-serif;font-size:11px;color:#C2427E;text-decoration:none;" style-hover="text-decoration:underline">{{ l }}</a>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+
+            <div style="flex:1;min-width:0;padding:16px 22px 40px;">
+              <div style="font-family:Georgia,'Times New Roman',serif;font-size:30px;color:#3C0F24;padding-bottom:4px;">{{ ieTitle }}</div>
+              <div style="height:1px;background:#E9A9C8;"></div>
+              <div style="padding:6px 0 14px;font-family:Tahoma,sans-serif;font-size:11px;color:#8E6478;">From Projectpedia, Free Project Presentations</div>
+
+              <div style="display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap;">
+                <div style="flex:1 1 300px;min-width:280px;display:flex;flex-direction:column;gap:12px;font-family:Tahoma,sans-serif;font-size:13px;line-height:1.65;color:#2E1622;text-wrap:pretty;">
+                  <sc-if value="{{ ieHasRepo }}" hint-placeholder-val="{{ false }}">
+                    
+                  </sc-if>
+                  <sc-if value="{{ ieHasBoldLead }}" hint-placeholder-val="{{ true }}">
+                    <div><strong>{{ ieLead }}</strong>{{ iePara1Rest }}</div>
+                  </sc-if>
+                  <sc-if value="{{ ieNoBoldLead }}" hint-placeholder-val="{{ false }}">
+                    <div>{{ iePara1 }}</div>
+                  </sc-if>
+                  <div>{{ iePara2 }}</div>
+                  <div>{{ iePara3 }}</div>
+                  <sc-if value="{{ ieHasRole }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                      <div style="padding-top:2px;font-family:Georgia,serif;font-size:19px;color:#3C0F24;">Role</div>
+                      <div style="height:1px;background:#E9A9C8;margin-top:-18px;"></div>
+                      <div>{{ ieRole }}</div>
+                    </div>
+                  </sc-if>
+                  <sc-if value="{{ ieHasRoleList }}" hint-placeholder-val="{{ false }}">
+                    <ul style="margin:-6px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:5px;">
+                      <sc-for list="{{ ieRoleList }}" as="r" hint-placeholder-count="5">
+                        <li>{{ r }}</li>
+                      </sc-for>
+                    </ul>
+                  </sc-if>
+                  <sc-if value="{{ ieHasRoleOutro }}" hint-placeholder-val="{{ false }}">
+                    <div>{{ ieRoleOutro }}</div>
+                  </sc-if>
+                  <sc-if value="{{ ieHasProcess }}" hint-placeholder-val="{{ true }}">
+                    <div style="display:flex;flex-direction:column;gap:12px;">
+                      <div style="padding-top:2px;font-family:Georgia,serif;font-size:19px;color:#3C0F24;">Process</div>
+                      <div style="height:1px;background:#E9A9C8;margin-top:-18px;"></div>
+                      <div>{{ ieProcess }}</div>
+                    </div>
+                  </sc-if>
+                </div>
+
+                <div style="flex:0 0 268px;display:flex;flex-direction:column;gap:12px;">
+                  <sc-if value="{{ ieShowInfobox }}" hint-placeholder-val="{{ true }}">
+                  <div style="border:1px solid #E9A9C8;background:#FFF6FA;padding:8px;">
+                    <sc-if value="{{ ieHasShots }}" hint-placeholder-val="{{ true }}">
+                      <div style="display:grid;gap:6px;align-items:stretch;grid-template-columns:{{ ieShotCols }}">
+                        <div style="display:flex;flex-direction:column;gap:6px;min-width:0;">
+                          <sc-for list="{{ ieShotsLeft }}" as="s">
+                            <div onClick="{{ onShotOpen }}" title="Click to expand" style="display:block;cursor:zoom-in;"><img data-shot="{{ s.src }}" alt="{{ s.alt }}" style="display:block;width:100%;height:auto;border:1px solid #E9A9C8;background:#FFF;"></div>
+                          </sc-for>
+                        </div>
+                        <sc-if value="{{ ieHasRight }}" hint-placeholder-val="{{ true }}">
+                          <div style="display:flex;flex-direction:column;gap:6px;min-width:0;">
+                            <sc-for list="{{ ieShotsRight }}" as="s">
+                              <div onClick="{{ onShotOpen }}" title="Click to expand" style="display:block;cursor:zoom-in;"><img data-shot="{{ s.src }}" alt="{{ s.alt }}" style="display:block;width:100%;height:auto;border:1px solid #E9A9C8;background:#FFF;"></div>
+                            </sc-for>
+                          </div>
+                        </sc-if>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ ieNoShots }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+                        <div style="height:88px;"><image-slot id="{{ ieSlot1 }}" shape="rect" placeholder="Drop a screenshot"></image-slot></div>
+                        <div style="height:88px;"><image-slot id="{{ ieSlot2 }}" shape="rect" placeholder="Drop a screenshot"></image-slot></div>
+                        <div style="height:88px;"><image-slot id="{{ ieSlot3 }}" shape="rect" placeholder="Drop a screenshot"></image-slot></div>
+                        <div style="height:88px;"><image-slot id="{{ ieSlot4 }}" shape="rect" placeholder="Drop a screenshot"></image-slot></div>
+                      </div>
+                    </sc-if>
+                    <div style="padding-top:8px;font-family:Tahoma,sans-serif;font-size:11px;line-height:1.5;color:#5C1533;">{{ ieTitle }} in use. {{ ieCapLinkLabel }} <a href="{{ ieUrl }}" target="_blank" rel="noopener" style="color:#C2427E;">{{ ieUrl }}</a></div>
+                    <ul style="margin:6px 0 0;padding-left:18px;font-family:Tahoma,sans-serif;font-size:11px;line-height:1.6;color:#5C1533;">
+                      <sc-for list="{{ ieCaps }}" as="c">
+                        <li>{{ c }}</li>
+                      </sc-for>
+                    </ul>
+                  </div>
+                  </sc-if>
+
+                  <div style="border:1px solid #E9A9C8;background:#FFF6FA;">
+                    <div style="padding:6px 8px;text-align:center;font-family:Georgia,serif;font-size:14px;font-weight:700;color:#3C0F24;border-bottom:1px solid #F3CBDF;">Tech stack</div>
+                    <sc-if value="{{ ieFlatStack }}" hint-placeholder-val="{{ true }}">
+                      <div style="display:flex;flex-direction:column;gap:5px;padding:8px 10px;">
+                        <sc-for list="{{ techStack }}" as="t" hint-placeholder-count="8">
+                          <div style="display:flex;gap:8px;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">
+                            <span style="flex:0 0 22px;color:#8E6478;">{{ t.n }}</span>
+                            <a href="#" style="color:#C2427E;text-decoration:none;">{{ t.name }}</a>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                    <sc-if value="{{ ieGroupedStack }}" hint-placeholder-val="{{ false }}">
+                      <div style="display:flex;flex-direction:column;gap:9px;padding:8px 10px;">
+                        <sc-for list="{{ stackGroups }}" as="g" hint-placeholder-count="3">
+                          <div style="display:flex;flex-direction:column;gap:4px;">
+                            <div style="font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#8E6478;">{{ g.title }}</div>
+                            <sc-for list="{{ g.items }}" as="t" hint-placeholder-count="4">
+                              <div style="display:flex;gap:8px;font-family:Tahoma,sans-serif;font-size:11px;color:#5C1533;">
+                                <span style="flex:0 0 10px;color:#C79BB2;">·</span>
+                                <a href="#" style="color:#C2427E;text-decoration:none;">{{ t }}</a>
+                              </div>
+                            </sc-for>
+                          </div>
+                        </sc-for>
+                      </div>
+                    </sc-if>
+                  </div>
+                </div>
+              </div>
+
+              <sc-if value="{{ ieHasGallery }}" hint-placeholder-val="{{ false }}">
+                <div style="padding-top:18px;">
+                  <div style="font-family:Georgia,serif;font-size:19px;color:#3C0F24;">Screens</div>
+                  <div style="height:1px;background:#E9A9C8;margin:4px 0 10px;"></div>
+                  <div style="border:1px solid #E9A9C8;background:#FFF6FA;padding:10px;">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+                      <sc-for list="{{ ieGallery }}" as="s">
+                        <figure style="margin:0;display:flex;flex-direction:column;gap:5px;min-width:0;">
+                          <div onClick="{{ onShotOpen }}" title="Click to expand" style="display:block;cursor:zoom-in;"><img data-shot="{{ s.src }}" alt="{{ s.alt }}" style="display:block;width:100%;height:auto;border:1px solid #E9A9C8;background:#FFF;"></div>
+                          <figcaption style="font-family:Tahoma,sans-serif;font-size:11px;line-height:1.5;color:#5C1533;">{{ s.alt }}</figcaption>
+                        </figure>
+                      </sc-for>
+                    </div>
+                    <sc-if value="{{ ieHasRepo }}" hint-placeholder-val="{{ false }}">
+                      <div style="padding-top:10px;font-family:Tahoma,sans-serif;font-size:11px;line-height:1.5;color:#5C1533;">{{ ieTitle }} in use. {{ ieRepoLabel }} <a href="{{ ieUrl }}" target="_blank" rel="noopener" style="color:#C2427E;">{{ ieUrl }}</a></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:3px 6px;background:#FFDFEE;border-top:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#7A1F45;">
+        <span style="flex:1;padding:1px 5px;border:1px solid #E9A9C8;">{{ ieStatus }}</span>
+        <span style="flex:0 0 120px;display:flex;align-items:center;gap:5px;padding:1px 5px;border:1px solid #E9A9C8;">
+          <span style="position:relative;width:12px;height:12px;overflow:hidden;display:inline-block;">
+            <span style="display:block;width:1px;height:1px;box-shadow:{{ worldShadow }};transform:scale(.38);transform-origin:0 0;"></span>
+          </span>Internet</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ projOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;background:#FFF6FA;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,5px 5px 0 rgba(122,31,69,.28);z-index:8250;display:flex;flex-direction:column;width:{{ projWidth }};max-width:{{ projMaxW }};height:{{ projHeight }};left:{{ projLeft }};top:{{ projTop }};visibility:{{ projVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 4px 4px 6px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onProjDown }}">
+        <div style="position:relative;width:18px;height:18px;flex:0 0 18px;overflow:hidden;">
+          <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.56);transform-origin:0 0;"></div>
+        </div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;">Projects</span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onProjMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onProjMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onProjClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;padding:3px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#5C1533;">
+        <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Favorites</span><span>Tools</span><span>Help</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;padding:4px 6px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;">
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;width:56px;padding:3px 0;font-family:Tahoma,sans-serif;font-size:11px;color:{{ t.color }};opacity:{{ t.opacity }}">
+            <div style="position:relative;width:16px;height:16px;">
+              <div style="width:1px;height:1px;box-shadow:{{ t.shadow }}"></div>
+            </div>
+            <span>{{ t.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:12px;color:#5C1533;">
+        <span>Address</span>
+        <div style="flex:1;display:flex;align-items:center;gap:6px;padding:2px 6px;background:#FFF6FA;border-top:1px solid #A83C6E;border-left:1px solid #A83C6E;border-right:1px solid #FFF6FA;border-bottom:1px solid #FFF6FA;">
+          <div style="position:relative;width:14px;height:14px;overflow:hidden;">
+            <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.44);transform-origin:0 0;"></div>
+          </div>
+          <span>Projects</span>
+        </div>
+      </div>
+      <div style="display:flex;flex:1;min-height:0;overflow:hidden;background:#FFF6FA;">
+        <div style="flex:0 0 250px;overflow:auto;padding:22px 20px;background:linear-gradient(160deg,#FFC4DF 0%,#FFEAF3 55%,#FFF6FA 100%);border-right:1px solid #F0B6D2;">
+          <div style="position:relative;width:26px;height:26px;overflow:hidden;margin-bottom:10px;">
+            <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.8);transform-origin:0 0;"></div>
+          </div>
+          <div style="font-family:Tahoma,sans-serif;font-size:19px;font-weight:700;color:#5C1533;">Projects</div>
+          <div style="height:3px;margin:8px 0 18px;background:linear-gradient(90deg,#D14E86 0 30%,#FF8FBE 30% 62%,#FFC9E1 62% 100%);"></div>
+          <div style="font-family:Tahoma,sans-serif;font-size:12px;color:#7A1F45;">Select an item to view its description.</div>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;display:flex;flex-wrap:wrap;align-content:flex-start;gap:10px;padding:14px;">
+          <sc-for list="{{ projItems }}" as="p" hint-placeholder-count="7">
+            <div style="width:100px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 2px 6px;background:{{ p.bg }}" onClick="{{ p.onClick }}">
+              <div style="position:relative;width:34px;height:34px;">
+                <div style="width:1px;height:1px;box-shadow:{{ p.shadow }};transform:scale(1.06);transform-origin:0 0;"></div>
+              </div>
+              <div style="width:88px;height:34px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Tahoma,sans-serif;font-size:12px;line-height:1.35;padding:1px 4px;color:{{ p.color }};background:{{ p.labelBg }}">{{ p.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:3px 6px;background:#FFDFEE;border-top:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#7A1F45;">
+        <span style="flex:0 0 260px;padding:1px 5px;border:1px solid #E9A9C8;">8 object(s)</span>
+        <span style="flex:1;padding:1px 5px;border:1px solid #E9A9C8;">&nbsp;</span>
+        <span style="flex:0 0 140px;padding:1px 5px;border:1px solid #E9A9C8;">My Computer</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ folderOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;background:#FFF6FA;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,5px 5px 0 rgba(122,31,69,.28);z-index:8200;display:flex;flex-direction:column;width:{{ folderWidth }};max-width:{{ folderMaxW }};height:{{ folderHeight }};left:{{ folderLeft }};top:{{ folderTop }};visibility:{{ folderVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 4px 4px 6px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onFolderDown }}">
+        <div style="position:relative;width:18px;height:18px;flex:0 0 18px;overflow:hidden;">
+          <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.56);transform-origin:0 0;"></div>
+        </div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;">Resume</span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onFolderMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onFolderMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onFolderClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;padding:3px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;color:#5C1533;">
+        <span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Favorites</span><span>Tools</span><span>Help</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:2px;padding:4px 6px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;">
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="6">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:2px;width:56px;padding:3px 0;font-family:Tahoma,sans-serif;font-size:11px;color:{{ t.color }};opacity:{{ t.opacity }}">
+            <div style="position:relative;width:16px;height:16px;">
+              <div style="width:1px;height:1px;box-shadow:{{ t.shadow }}"></div>
+            </div>
+            <span>{{ t.label }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:4px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:12px;color:#5C1533;">
+        <span>Address</span>
+        <div style="flex:1;display:flex;align-items:center;gap:6px;padding:2px 6px;background:#FFF6FA;border-top:1px solid #A83C6E;border-left:1px solid #A83C6E;border-right:1px solid #FFF6FA;border-bottom:1px solid #FFF6FA;">
+          <div style="position:relative;width:14px;height:14px;overflow:hidden;">
+            <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.44);transform-origin:0 0;"></div>
+          </div>
+          <span>Resume</span>
+        </div>
+      </div>
+      <div style="display:flex;flex:1;min-height:0;overflow:hidden;background:#FFF6FA;">
+        <div style="flex:0 0 250px;overflow:auto;padding:22px 20px;background:linear-gradient(160deg,#FFC4DF 0%,#FFEAF3 55%,#FFF6FA 100%);border-right:1px solid #F0B6D2;">
+          <div style="position:relative;width:26px;height:26px;overflow:hidden;margin-bottom:10px;">
+            <div style="width:1px;height:1px;box-shadow:{{ folderIconShadow }};transform:scale(.8);transform-origin:0 0;"></div>
+          </div>
+          <div style="font-family:Tahoma,sans-serif;font-size:19px;font-weight:700;color:#5C1533;">Resume</div>
+          <div style="height:3px;margin:8px 0 18px;background:linear-gradient(90deg,#D14E86 0 30%,#FF8FBE 30% 62%,#FFC9E1 62% 100%);"></div>
+          <div style="font-family:Tahoma,sans-serif;font-size:12px;color:#7A1F45;">{{ folderHint }}</div>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;display:flex;flex-wrap:wrap;align-content:flex-start;gap:10px;padding:14px;">
+          <sc-for list="{{ docs }}" as="d" hint-placeholder-count="2">
+            <div style="width:100px;display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 2px 6px;background:{{ d.bg }}" onClick="{{ d.onClick }}" onDoubleClick="{{ d.onOpen }}">
+              <div style="position:relative;width:34px;height:34px;">
+                <div style="width:1px;height:1px;box-shadow:{{ d.shadow }};transform:scale(1.06);transform-origin:0 0;"></div>
+              </div>
+              <div style="width:88px;height:34px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Tahoma,sans-serif;font-size:12px;line-height:1.35;padding:1px 4px;color:{{ d.color }};background:{{ d.labelBg }}">{{ d.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:3px 6px;background:#FFDFEE;border-top:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#7A1F45;">
+        <span style="flex:0 0 260px;padding:1px 5px;border:1px solid #E9A9C8;">3 object(s)</span>
+        <span style="flex:1;padding:1px 5px;border:1px solid #E9A9C8;">&nbsp;</span>
+        <span style="flex:0 0 140px;padding:1px 5px;border:1px solid #E9A9C8;">My Computer</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <template id="__bundler_thumbnail">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#E44B8E"/><rect x="30" y="34" width="40" height="28" rx="2" fill="#FFF3F8"/><rect x="33" y="37" width="34" height="18" fill="#FFC0DC"/><rect x="44" y="62" width="12" height="4" fill="#FFF3F8"/><rect x="38" y="66" width="24" height="3" rx="1.5" fill="#FFF3F8"/></svg>
+  </template>
+
+  <sc-if value="{{ lightOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:9900;background:rgba(58,10,32,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:26px;cursor:zoom-out;" onClick="{{ onLightClose }}">
+      <img data-shot="{{ lightSrc }}" alt="{{ lightAlt }}" style="max-width:96vw;max-height:82vh;width:auto;height:auto;display:block;border:2px solid #FFF6FA;box-shadow:0 8px 0 rgba(0,0,0,.35);background:#FFF;">
+      <div style="display:flex;align-items:center;gap:14px;font-family:Tahoma,sans-serif;font-size:12px;color:#FFE3F0;text-align:center;max-width:80vw;">
+        <span>{{ lightAlt }}</span>
+        <span style="opacity:.7;">Click anywhere to close</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ resOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;display:flex;flex-direction:column;background:#FFE3F0;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;box-shadow:0 0 0 1px #7A1F45,5px 5px 0 rgba(122,31,69,.28);z-index:8600;width:{{ resWidth }};height:{{ resHeight }};left:{{ resLeft }};top:{{ resTop }};visibility:{{ resVis }}">
+      <div style="display:flex;align-items:center;gap:8px;padding:5px 5px 5px 7px;background:linear-gradient(#E44B8E,#B32A68);touch-action:none;" onPointerDown="{{ onResDown }}">
+        <div style="position:relative;width:17px;height:17px;flex:0 0 17px;overflow:hidden;">
+          <div style="width:1px;height:1px;box-shadow:{{ resIconShadow }};transform:scale(.53);transform-origin:0 0;"></div>
+        </div>
+        <span style="flex:1;font-family:Tahoma,'MS Sans Serif',sans-serif;font-size:12px;font-weight:700;color:#FFF3F8;">Jordan_Duncan_Resume.doc — Document Viewer</span>
+        <div style="display:flex;gap:3px;">
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:flex-end;justify-content:center;padding-bottom:3px;" onClick="{{ onResMin }}"><div style="width:8px;height:2px;background:#7A1F45;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;" onClick="{{ onResMax }}"><div style="width:9px;height:8px;border:1px solid #7A1F45;border-top-width:2px;"></div></div>
+          <div style="width:18px;height:16px;background:#FFC0DC;border-top:1px solid #FFF6FA;border-left:1px solid #FFF6FA;border-right:1px solid #7A1F45;border-bottom:1px solid #7A1F45;display:flex;align-items:center;justify-content:center;font-family:Tahoma,sans-serif;font-size:11px;font-weight:700;color:#7A1F45;line-height:1;" onClick="{{ onResClose }}">×</div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;">
+        <a href="./Jordan_Duncan_Resume.docx" download="Jordan_Duncan_Resume.docx" style="display:flex;align-items:center;gap:7px;padding:4px 12px;text-decoration:none;background:#FFC0DC;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#5C1533;" style-active="background:#FFA9CE">
+          <span style="font-size:13px;line-height:1;">⤓</span>Download
+        </a>
+        <div style="display:flex;align-items:center;gap:7px;padding:4px 12px;background:#FFC0DC;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#5C1533;" style-active="background:#FFA9CE" onClick="{{ onResPrint }}">
+          <span style="font-size:13px;line-height:1;">⎙</span>Print
+        </div>
+        <div style="width:1px;align-self:stretch;background:#E9A9C8;"></div>
+        <span style="font-family:Tahoma,sans-serif;font-size:11px;color:#7A1F45;">Tip: in the print dialog, turn off “Headers and footers” for a clean copy.</span>
+      </div>
+      <div class="om-pinkscroll" style="flex:1;min-height:0;overflow:auto;background:#C98FB0;padding:18px;display:flex;justify-content:center;align-items:flex-start;">
+        <div id="resume-sheet" style="width:100%;max-width:816px;background:#FFFFFF;box-shadow:0 2px 0 rgba(90,20,50,.35);border:1px solid #A83C6E;padding:46px 56px 54px;font-family:'Times New Roman',Times,serif;color:#111;">
+          <div style="text-align:center;font-size:26px;font-weight:700;letter-spacing:.01em;">Jordan Duncan</div>
+          <div style="text-align:center;font-size:13px;margin-top:4px;">
+            <a href="https://www.linkedin.com/in/jordanmduncan/" target="_blank" rel="noopener" style="color:#111;text-decoration:underline;">LinkedIn</a>&nbsp; |&nbsp; 417-737-1137&nbsp; |&nbsp; <a href="mailto:jordan4duncan@gmail.com" style="color:#111;text-decoration:underline;">Email</a>&nbsp; |&nbsp; <a href="https://github.com/jordan-can-dunk" target="_blank" rel="noopener" style="color:#111;text-decoration:underline;">GitHub</a>
+          </div>
+
+          <div style="margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.05em;border-bottom:1.5px solid #111;padding-bottom:2px;">EDUCATION</div>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:7px;font-size:14px;font-weight:700;">
+            <span>University of Central Missouri</span><span>August 2025 – May 2027</span>
+          </div>
+          <div style="font-size:14px;font-weight:700;">B.S. in Computer Science — Concentration in Software Development, Minor in Cybersecurity | GPA: 4.0</div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Expected Graduation: May 2027</li>
+            <li>Relevant Coursework: Software Engineering, Secure Software Engineering, Secure Programming, Database Theory &amp; Applications, Machine Learning, Practical AI, Computer Networking, Web Applications, C &amp; Unix</li>
+            <li>UCM Honors College</li>
+            <li>ACM Merit Scholarship</li>
+            <li>CS and Cybersecurity Achievement Scholarship</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Missouri Southern State University</span><span>August 2023 – May 2025</span>
+          </div>
+          <div style="font-size:14px;font-weight:700;">B.S. in Computer Information Science, Minor in Computational Mathematics | GPA: 4.0</div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Relevant Coursework: Programming I, Programming II, Python Programming, Information Systems</li>
+            <li>MSSU Honors Program</li>
+            <li>Honors Scholarship</li>
+            <li>A+ Scholarship</li>
+          </ul>
+
+          <div style="margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.05em;border-bottom:1.5px solid #111;padding-bottom:2px;">EXPERIENCE</div>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:7px;font-size:14px;font-weight:700;">
+            <span>Software Development Intern — Dimensional Innovations (Overland Park, KS)</span><span style="white-space:nowrap;">June 2026 – July 2026</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Independently designed and built an internal support-ticket filing and search system in Django Admin for DI's installation/IT department, replacing manual, unsearchable record-keeping with a structured, searchable tool.</li>
+            <li>Designed and built a Vue, Django, and Leaflet.js web app mapping local Kansas City spots for interns to discover; pitched and delivered it to both Dimensional Innovations and the Kansas City Area Development Council (TeamKC) as a talent-retention resource for future interns.</li>
+            <li>Developed a Vue, Electron, TypeScript, and Phidgets hardware-integrated application for a permanent museum exhibit, programming capacitive touch sensors and solid-state relays to trigger synchronized video and lighting in real time.</li>
+            <li>Communicated directly with clients and the development team throughout each project, translating technical tradeoffs into plain language and turning feedback into concrete product changes.</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Computer Science &amp; Mathematics Tutor — University of Central Missouri</span><span style="white-space:nowrap;">August 2025 – May 2026</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Provided one-on-one tutoring in computer science and mathematics coursework, which reinforced and deepened my own understanding of the concepts I was teaching while helping students improve problem-solving skills and course performance.</li>
+          </ul>
+
+          <div style="margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.05em;border-bottom:1.5px solid #111;padding-bottom:2px;">PROJECTS</div>
+          <div style="margin-top:7px;font-size:14px;font-weight:700;">Agent Fluffy Bunny (AFB) — AI Personal Assistant — UCM Student Symposium</div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Developed an AI-powered voice assistant with a peer, featuring wake-word activation, task automation (web search, music, notes, weather), and a custom animated character interface; delivered the project as my first academic oral presentation.</li>
+          </ul>
+          <div style="margin-top:9px;font-size:14px;font-weight:700;">Bank Appointment Booking System — UCM Software Engineering Course Project</div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Built a full-stack appointment scheduling application (Java, Spring Boot, React, MySQL) with a three-tier architecture and database-level conflict prevention, as part of a team project.</li>
+          </ul>
+
+          <div style="margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.05em;border-bottom:1.5px solid #111;padding-bottom:2px;">LEADERSHIP &amp; INVOLVEMENT</div>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:7px;font-size:14px;font-weight:700;">
+            <span>President — UCM Chapter, Association for Computing Machinery (ACM)</span><span style="white-space:nowrap;">January 2026 – Present</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Lead general meetings and chapter events, oversee the officer team, and represent the chapter within the UCM Computer Science department and at campus events.</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Operations Lead — Mule Hacks 2026 (UCM's First Student-Run Hackathon)</span><span style="white-space:nowrap;">June 2026 – Present</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Coordinated the event venue, logistics, and schedule alongside a team of student organizers to plan and host UCM's first-ever hackathon.</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Vice President — UCM Chapter, Association for Computing Machinery (ACM)</span><span style="white-space:nowrap;">August 2025 – January 2026</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Planned meetings and events and created social media and advertisements to revive the chapter activity.</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Member — KC Women in Tech, Security KC (SecKC), KC Java User Development Group</span><span style="white-space:nowrap;font-style:italic;">September 2025 – Present</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Regularly attend local meetups and events, including KC Developers Conference (2026), Kansas City DevFest (2026), SparkCon (2025) to build professional connections and stay current on trends in software development and cybersecurity.</li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;gap:16px;margin-top:9px;font-size:14px;font-weight:700;">
+            <span>Officer — Computer Science Club, Missouri Southern State University</span><span style="white-space:nowrap;">August 2024 – May 2025</span>
+          </div>
+          <ul style="margin:4px 0 0;padding-left:22px;font-size:13px;line-height:1.4;">
+            <li>Helped plan and run club meetings and activities for computer science students.</li>
+          </ul>
+
+          <div style="margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.05em;border-bottom:1.5px solid #111;padding-bottom:2px;">SKILLS</div>
+          <div style="margin-top:7px;font-size:13px;line-height:1.5;"><strong>Languages:</strong> Java, C, Python, JavaScript, TypeScript, C#, SQL, HTML/CSS</div>
+          <div style="font-size:13px;line-height:1.5;"><strong>Frameworks &amp; Libraries:</strong> Django, Django REST Framework, Vue.js, React, Spring Boot, Node.js, Express.js, Electron.js, Tailwind CSS, Leaflet.js, Pinia</div>
+          <div style="font-size:13px;line-height:1.5;"><strong>Tools &amp; Platforms:</strong> Git, GitHub, GitLab, Docker, PostgreSQL, Heroku, Vite, Agile Methodology</div>
+          <div style="font-size:13px;line-height:1.5;"><strong>Other:</strong> AI Agents &amp; Generative AI, Security, Hardware Integration (Phidgets), Full-Stack Development</div>
+        </div>
+      </div>
+      <div style="flex:0 0 auto;display:flex;align-items:center;gap:6px;padding:3px 6px;background:#FFDFEE;border-top:1px solid #F0B6D2;font-family:Tahoma,sans-serif;font-size:11px;color:#7A1F45;">
+        <span style="flex:0 0 300px;padding:1px 5px;border:1px solid #E9A9C8;">Jordan_Duncan_Resume.docx</span>
+        <span style="flex:1;padding:1px 5px;border:1px solid #E9A9C8;">Official copy — updated September 2026</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ winOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;width:700px;max-width:94vw;background:#FFF6FA;border:2px solid #7A1F45;box-shadow:5px 5px 0 rgba(122,31,69,.3);z-index:8000;left:{{ winLeft }}px;top:{{ winTop }}px;display:{{ winDisplay }}">
+      <div style="display:flex;align-items:center;padding:9px 12px;background:#FFC0DC;border-bottom:2px solid #7A1F45;touch-action:none;" onPointerDown="{{ onWinDown }}">
+        <div style="display:flex;align-items:center;gap:7px;flex:0 0 auto;">
+          <div style="width:15px;height:15px;border-radius:50%;background:#D14E86;border:2px solid #7A1F45;" onClick="{{ onClose }}"></div>
+          <div style="width:15px;height:15px;border-radius:50%;background:#FF8FBE;border:2px solid #7A1F45;"></div>
+          <div style="width:15px;height:15px;border-radius:50%;background:#FFD9EA;border:2px solid #7A1F45;"></div>
+        </div>
+        <div style="flex:1;text-align:center;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:13px;font-weight:700;letter-spacing:0;color:#5C1533;">My Computer</div>
+        <div style="flex:0 0 66px;"></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:2px solid #F2B9D2;">
+        <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:13px;color:#C97BA3;">←</span>
+        <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;letter-spacing:0;color:#B0447C;">Portfolio</span>
+      </div>
+      <div style="display:flex;min-height:340px;">
+        <div style="flex:0 0 268px;border-right:2px solid #F2B9D2;padding:14px 0;display:flex;flex-direction:column;">
+          <sc-for list="{{ files }}" as="f" hint-placeholder-count="6">
+            <div style="display:flex;align-items:center;gap:14px;padding:9px 18px;touch-action:none;background:{{ f.bg }}" onClick="{{ f.onClick }}">
+              <div style="position:relative;width:32px;height:32px;flex:0 0 32px;">
+                <div style="width:1px;height:1px;box-shadow:{{ f.shadow }}"></div>
+              </div>
+              <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;letter-spacing:0;color:{{ f.color }}">{{ f.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:30px;">
+          <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;letter-spacing:0;color:#D18FB2;text-align:center;line-height:2;">{{ previewText }}</span>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="position:absolute;left:0;right:0;bottom:0;height:44px;display:flex;align-items:stretch;gap:6px;padding:4px 4px;background:#FFAFD3;border-top:2px solid #FFE3F1;box-shadow:0 -2px 0 #F26EA8 inset;z-index:9000;">
+    <div style="display:flex;align-items:center;gap:7px;padding:0 12px 0 8px;border-top:2px solid {{ startLight }};border-left:2px solid {{ startLight }};border-right:2px solid {{ startDark }};border-bottom:2px solid {{ startDark }};background:{{ startBg }}" onPointerDown="{{ onStart }}">
+      <div style="position:relative;width:21px;height:21px;">
+        <div style="width:3px;height:3px;box-shadow:{{ startShadow }}"></div>
+      </div>
+      <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:13px;font-weight:700;color:#7A1F45;">Start</span>
+    </div>
+    
+    <div style="flex:1;display:flex;align-items:center;gap:4px;padding:0 2px;">
+      <sc-for list="{{ taskItems }}" as="t" hint-placeholder-count="0">
+        <div style="display:flex;align-items:center;gap:7px;height:100%;width:180px;padding:0 10px 0 6px;background:{{ t.bg }};border-top:2px solid {{ t.light }};border-left:2px solid {{ t.light }};border-right:2px solid {{ t.dark }};border-bottom:2px solid {{ t.dark }}" onPointerDown="{{ t.onClick }}">
+          <div style="position:relative;width:16px;height:16px;flex:0 0 16px;overflow:hidden;">
+            <div style="width:1px;height:1px;box-shadow:{{ t.shadow }};transform:scale(.5);transform-origin:0 0;"></div>
+          </div>
+          <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;font-weight:700;color:#7A1F45;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ t.label }}</span>
+        </div>
+      </sc-for>
+    </div><div style="display:flex;align-items:center;gap:8px;padding:0 10px;background:#FFC0DC;border-top:2px solid #C94C81;border-left:2px solid #C94C81;border-right:2px solid #FFF3F8;border-bottom:2px solid #FFF3F8;">
+      <span style="font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;font-size:12px;color:#7A1F45;">{{ clock }}</span>
+    </div>
+    
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentPink&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FF6FA5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#FF6FA5&quot;,&quot;#F7A8C4&quot;,&quot;#E8B4D8&quot;,&quot;#D14E86&quot;],&quot;section&quot;:&quot;Look&quot;},&quot;labelPlates&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Look&quot;}}">
+const PAL = { K:'#7A1F45', P:'#FF6FA5', L:'#FFC9E1', W:'#FFFFFF', D:'#D14E86', S:'#FFE2D1', H:'#B0447C', M:'#5C1533' };
+
+function shadow(map, px) {
+  const out = [];
+  map.forEach((row, y) => {
+    for (let x = 0; x < row.length; x++) {
+      const c = PAL[row[x]];
+      if (c) out.push((x * px) + 'px ' + (y * px) + 'px 0 0 ' + c);
+    }
+  });
+  return out.join(',');
+}
+
+const N = 32;
+function G() { const g = []; for (let y = 0; y < N; y++) g.push(new Array(N).fill('.')); return g; }
+function fin(g) { return g.map(r => r.join('')); }
+function px(g, x, y, c) { x = Math.round(x); y = Math.round(y); if (g[y] && x >= 0 && x < N) g[y][x] = c; }
+function rect(g, x, y, w, h, c) { for (let j = y; j < y + h; j++) for (let i = x; i < x + w; i++) px(g, i, j, c); }
+function box(g, x, y, w, h, c) { rect(g, x, y, w, 1, c); rect(g, x, y + h - 1, w, 1, c); rect(g, x, y, 1, h, c); rect(g, x + w - 1, y, 1, h, c); }
+function disc(g, cx, cy, r, c) { for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) if (Math.hypot(x - cx, y - cy) <= r) px(g, x, y, c); }
+function ringOf(g, cx, cy, r0, r1, c) { for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) { const d = Math.hypot(x - cx, y - cy); if (d >= r0 && d <= r1) px(g, x, y, c); } }
+
+function artFolder() {
+  const g = G();
+  box(g, 2, 4, 13, 6, 'K'); rect(g, 3, 5, 11, 4, 'L');
+  box(g, 2, 8, 28, 20, 'K'); rect(g, 3, 9, 26, 18, 'L');
+  box(g, 2, 12, 28, 16, 'K'); rect(g, 3, 13, 26, 14, 'P');
+  rect(g, 3, 13, 26, 1, 'L'); rect(g, 3, 14, 1, 12, 'L');
+  rect(g, 3, 25, 26, 2, 'D'); rect(g, 28, 14, 1, 13, 'D');
+  return fin(g);
+}
+function artDoc() {
+  const g = G();
+  const x0 = 5, x1 = 27, y0 = 1, y1 = 31, fold = 7;
+  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+    if (y - y0 < fold && x1 - x < fold - (y - y0)) continue;
+    px(g, x, y, 'W');
+  }
+  for (let y = y0; y <= y1; y++) px(g, x0, y, 'K');
+  rect(g, x0, y1, x1 - x0 + 1, 1, 'K');
+  for (let y = y0 + fold; y <= y1; y++) px(g, x1, y, 'K');
+  for (let x = x0; x <= x1 - fold; x++) px(g, x, y0, 'K');
+  for (let k = 0; k <= fold; k++) px(g, x1 - fold + k, y0 + k, 'K');
+  rect(g, x1 - fold + 1, y0 + 1, fold - 1, fold - 1, 'L');
+  rect(g, 9, 4, 2, 2, 'D'); rect(g, 8, 6, 2, 2, 'D'); rect(g, 10, 6, 2, 2, 'D');
+  rect(g, 7, 8, 2, 4, 'D'); rect(g, 11, 8, 2, 4, 'D'); rect(g, 9, 8, 2, 1, 'D');
+  for (const y of [14, 16, 18, 20]) rect(g, 8, y, 15, 1, 'H');
+  rect(g, 8, 22, 9, 1, 'H');
+  box(g, 14, 24, 11, 6, 'K'); rect(g, 15, 25, 9, 4, 'L');
+  rect(g, 15, 27, 9, 2, 'P'); px(g, 17, 26, 'W'); px(g, 21, 26, 'W');
+  return fin(g);
+}
+function artDl() {
+  const g = G();
+  const x0 = 8, x1 = 28, y0 = 2, y1 = 30, fold = 6;
+  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+    if (y - y0 < fold && x1 - x < fold - (y - y0)) continue;
+    px(g, x, y, 'W');
+  }
+  for (let y = y0; y <= y1; y++) px(g, x0, y, 'H');
+  for (let y = y0 + fold; y <= y1; y++) px(g, x1, y, 'H');
+  for (let x = x0; x <= x1 - fold; x++) px(g, x, y0, 'H');
+  for (let k = 0; k <= fold; k++) px(g, x1 - fold + k, y0 + k, 'H');
+  rect(g, x1 - fold + 1, y0 + 1, fold - 1, fold - 1, 'L');
+  rect(g, x0, y1, x1 - x0 + 1, 1, 'M');
+  rect(g, x1, y0 + fold, 1, y1 - y0 - fold + 1, 'M');
+  for (const y of [10, 12, 14, 16, 18, 20, 22, 24, 26]) rect(g, 11, y, y === 26 ? 10 : 15, 1, 'H');
+  for (let i = 0; i <= 10; i++) {
+    px(g, 16 + i, 19 + i, 'M');
+    px(g, 17 + i, 19 + i, 'P');
+    px(g, 18 + i, 19 + i, 'D');
+    px(g, 19 + i, 19 + i, 'M');
+  }
+  ringOf(g, 12.5, 14.5, 6.9, 8.4, 'M');
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    if (Math.hypot(x - 12.5, y - 14.5) <= 6.8) px(g, x, y, (x + y) % 2 === 0 ? 'P' : 'L');
+  }
+  for (const p of [[9, 9], [10, 9], [8, 10], [9, 10], [7, 12], [8, 12], [7, 13]]) px(g, p[0], p[1], 'W');
+  return fin(g);
+}
+function artWorld() {
+  const g = G();
+  disc(g, 15.5, 15.5, 14.4, 'L');
+  for (const a of [14.2, 9.5, 4.6]) {
+    for (let y = 1; y < 31; y++) {
+      const dy = (y - 15.5) / 14.2;
+      if (Math.abs(dy) > 1) continue;
+      const w = a * Math.sqrt(1 - dy * dy);
+      px(g, 15.5 + w, y, 'D'); px(g, 15.5 - w, y, 'D');
+    }
+  }
+  rect(g, 1, 15, 30, 1, 'D');
+  for (const dy of [-8, 8]) {
+    const w = 14.2 * Math.sqrt(1 - Math.pow(dy / 14.2, 2));
+    rect(g, Math.round(15.5 - w), 15 + dy, Math.round(2 * w), 1, 'D');
+  }
+  for (const dy of [-4, 4]) {
+    const w = 14.2 * Math.sqrt(1 - Math.pow(dy / 14.2, 2));
+    rect(g, Math.round(15.5 - w), 15 + dy, Math.round(2 * w), 1, 'D');
+  }
+  ringOf(g, 15.5, 15.5, 13.2, 14.6, 'K');
+  for (let i = 0; i < 6; i++) px(g, 8 + i * 0.7, 7 - i * 0.5, 'W');
+  return fin(g);
+}
+function artMusic() {
+  const g = G();
+  const cx = 17, cy = 19, R = 12.9;
+  disc(g, cx, cy, R, 'L');
+  // iridescent wedges
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    if (g[y][x] !== 'L') continue;
+    const a = Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+    const d = Math.hypot(x - cx, y - cy);
+    const w = ((a + 360) % 360);
+    if (w > 248 && w < 292) g[y][x] = 'W';
+    else if (w > 62 && w < 104) g[y][x] = 'P';
+    else if ((w > 104 && w < 152) || (w > 292 && w < 338)) g[y][x] = ((x + y) % 2 === 0 ? 'W' : 'P');
+    else if (d > R * 0.7) g[y][x] = 'D';
+  }
+  ringOf(g, cx, cy, R - 1.6, R, 'K');
+  // hub
+  disc(g, cx, cy, 4.6, 'K'); disc(g, cx, cy, 3.6, 'W'); disc(g, cx, cy, 1.8, 'L');
+  // eighth note over the top-left
+  rect(g, 11, 1, 3, 13, 'K');
+  rect(g, 12, 1, 8, 3, 'K'); rect(g, 17, 3, 3, 6, 'K'); rect(g, 19, 4, 2, 4, 'K');
+  disc(g, 9, 14.5, 3.6, 'K'); disc(g, 8.3, 13.7, 1.4, 'W');
+  return fin(g);
+}
+function artMovie() {
+  const g = G();
+  box(g, 2, 13, 28, 17, 'K'); rect(g, 3, 14, 26, 15, 'L');
+  for (const y of [17, 21, 25]) rect(g, 4, y, 24, 1, 'D');
+  rect(g, 4, 15, 24, 1, 'W');
+  for (let x = 2; x < 30; x++) {
+    const top = Math.round(9 - (x - 2) * 0.20);
+    const c = Math.floor((x - 2) / 3) % 2 === 0 ? 'W' : 'D';
+    rect(g, x, top, 1, 4, c);
+    px(g, x, top - 1, 'K'); px(g, x, top + 4, 'K');
+  }
+  return fin(g);
+}
+function artBin() {
+  const g = G();
+  // open top rim (ellipse)
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) {
+    const e = Math.pow((x - 15.5) / 11.4, 2) + Math.pow((y - 6.5) / 3.6, 2);
+    if (e <= 1) px(g, x, y, 'L');
+  }
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) {
+    const e = Math.pow((x - 15.5) / 8.8, 2) + Math.pow((y - 6.8) / 2.5, 2);
+    if (e <= 1) px(g, x, y, 'D');
+  }
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) {
+    const e = Math.pow((x - 15.5) / 11.4, 2) + Math.pow((y - 6.5) / 3.6, 2);
+    if (e > 0.82 && e <= 1.06) px(g, x, y, 'K');
+  }
+  // tapered body with vertical ribs
+  for (let y = 7; y <= 29; y++) {
+    const t = (y - 7) / 22;
+    const w = 11.4 - t * 3.6;
+    const x0 = Math.round(15.5 - w), x1 = Math.round(15.5 + w);
+    rect(g, x0 + 1, y, x1 - x0 - 1, 1, 'L');
+    px(g, x0, y, 'K'); px(g, x1, y, 'K');
+    px(g, x0 + 1, y, 'W'); px(g, x1 - 1, y, 'D'); px(g, x1 - 2, y, 'D');
+    if (y > 9) { for (const rx of [-7, -3.5, 3.5, 7]) px(g, 15.5 + rx * (w / 11.4), y, 'D'); }
+  }
+  // base
+  for (let x = 0; x < N; x++) for (let y = 0; y < N; y++) {
+    const e = Math.pow((x - 15.5) / 7.9, 2) + Math.pow((y - 29.4) / 2.4, 2);
+    if (e <= 1) px(g, x, y, y > 29 ? 'D' : 'L');
+    if (e > 0.78 && e <= 1.05 && y >= 28) px(g, x, y, 'K');
+  }
+  return fin(g);
+}
+function artAbout() {
+  const g = G();
+  disc(g, 15.5, 15, 11.4, 'H');
+  rect(g, 4, 15, 24, 12, 'H');
+  disc(g, 15.5, 16, 8.2, 'S');
+  for (let y = 0; y < 13; y++) for (let x = 0; x < N; x++) if (g[y][x] === 'S') g[y][x] = 'H';
+  rect(g, 11, 15, 2, 2, 'K'); rect(g, 19, 15, 2, 2, 'K');
+  rect(g, 9, 18, 2, 2, 'D'); rect(g, 21, 18, 2, 2, 'D');
+  rect(g, 13, 20, 6, 1, 'K'); px(g, 12, 19, 'K'); px(g, 19, 19, 'K');
+  rect(g, 14, 24, 4, 3, 'S');
+  rect(g, 6, 26, 20, 6, 'P'); rect(g, 6, 26, 20, 1, 'L');
+  rect(g, 6, 31, 20, 1, 'D');
+  ringOf(g, 15.5, 15, 11.4, 12.2, 'K');
+  return fin(g);
+}
+
+function artIE() {
+  const g = G();
+  const x0 = 6, x1 = 26, y0 = 2, y1 = 29, fold = 6;
+  for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+    if (y - y0 < fold && x1 - x < fold - (y - y0)) continue;
+    px(g, x, y, 'W');
+  }
+  for (let y = y0; y <= y1; y++) px(g, x0, y, 'K');
+  rect(g, x0, y1, x1 - x0 + 1, 1, 'K');
+  for (let y = y0 + fold; y <= y1; y++) px(g, x1, y, 'K');
+  for (let x = x0; x <= x1 - fold; x++) px(g, x, y0, 'K');
+  for (let k = 0; k <= fold; k++) px(g, x1 - fold + k, y0 + k, 'K');
+  rect(g, x1 - fold + 1, y0 + 1, fold - 1, fold - 1, 'L');
+  // orbit swoosh behind the glyph
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const e = Math.pow((x - 16) / 12.6, 2) + Math.pow((y - 15) / 6.4, 2);
+    if (e > 0.74 && e <= 1 && (y < 13 || x < 12)) px(g, x, y, 'D');
+  }
+  // lowercase e ring, open toward lower right
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    const d = Math.hypot((x - 16) / 8.4, (y - 18) / 8.0);
+    if (d < 0.52 || d > 1) continue;
+    const a = (Math.atan2(y - 18, x - 16) * 180 / Math.PI + 360) % 360;
+    if (a > 8 && a < 62) continue;
+    px(g, x, y, y > 22 ? 'D' : 'P');
+  }
+  rect(g, 9, 17, 14, 3, 'P');
+  rect(g, 9, 19, 14, 1, 'D');
+  return fin(g);
+}
+function artCd() {
+  const g = G();
+  const cx = 18, cy = 12, R = 11.6;
+  disc(g, cx, cy, R, 'L');
+  for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) {
+    if (g[y][x] !== 'L') continue;
+    const a = (Math.atan2(y - cy, x - cx) * 180 / Math.PI + 360) % 360;
+    const d = Math.hypot(x - cx, y - cy);
+    if (a > 196 && a < 232) g[y][x] = 'W';
+    else if (a > 232 && a < 268) g[y][x] = 'P';
+    else if (a > 268 && a < 300) g[y][x] = ((x + y) % 2 === 0 ? 'W' : 'P');
+    else if (a > 44 && a < 86) g[y][x] = ((x + y) % 2 === 0 ? 'L' : 'D');
+    else if (d > R * 0.72) g[y][x] = 'D';
+  }
+  ringOf(g, cx, cy, R - 1.3, R, 'K');
+  disc(g, cx, cy, 3.6, 'K'); disc(g, cx, cy, 2.8, 'W'); disc(g, cx, cy, 1.3, 'L');
+  // drive body
+  box(g, 1, 19, 25, 11, 'K');
+  rect(g, 2, 20, 23, 9, 'L');
+  rect(g, 2, 20, 23, 1, 'W');
+  rect(g, 2, 27, 23, 2, 'D');
+  box(g, 4, 23, 13, 4, 'K'); rect(g, 5, 24, 11, 2, 'P');
+  rect(g, 20, 23, 3, 2, 'D');
+  return fin(g);
+}
+
+const ART32 = {
+  about: artAbout(), folder: artFolder(), world: artWorld(), doc: artDoc(),
+  music: artMusic(), movie: artMovie(), bin: artBin(), ie: artIE(), cd: artCd(), dl: artDl()
+};
+
+const ART_OLD = {
+  about: [
+    "....KKKKKKKK....",
+    "..KKHHHHHHHHKK..",
+    "..KHHHHHHHHHHK..",
+    ".KHHHHHHHHHHHHK.",
+    ".KHHSSSSSSSSHHK.",
+    ".KHHSKSSSSKSHHK.",
+    ".KHHSSSSSSSSHHK.",
+    ".KHHSDSSSSDSHHK.",
+    ".KHHSSKKKKSSHHK.",
+    ".KHHHSSSSSSHHHK.",
+    ".KHHHHSSSSHHHHK.",
+    ".KHHHHSSSSHHHHK.",
+    ".KHHHHPPPPHHHHK.",
+    ".KHHHPPPPPPHHHK.",
+    "KKHHPPPPPPPPHHKK",
+    "KKKKKKKKKKKKKKKK"
+  ],
+  folder: [
+    "................",
+    "..KKKKK.........",
+    ".KLLLLLK........",
+    ".KLLLLLKKKKKKKK.",
+    ".KLLLLLLLLLLLLK.",
+    ".KLPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KPPPPPPPPPPPPK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KKKKKKKKKKKKKK.",
+    "................",
+    "................"
+  ],
+  world: [
+    "......KKKK......",
+    "....KKLLLLKK....",
+    "...KLWWLLPPLK...",
+    "..KLWLLLPPPPLK..",
+    "..KLLLPPPPPPLK..",
+    ".KLLLPPPLLPPPLK.",
+    ".KLLPPPPLLPPPLK.",
+    "KLLLPPPLLLPPPPLK",
+    "KLLLLPPLLLPPPPLK",
+    ".KLLLPPLLLPPPLK.",
+    ".KLLLPPPLLPPLLK.",
+    "..KLLLPPPLLLLK..",
+    "..KLLLPPPLLLLK..",
+    "...KLLPPLLLLK...",
+    "....KKLLLLKK....",
+    "......KKKK......"
+  ],
+  music: [
+    "................",
+    "................",
+    "....KKKKKKKK....",
+    "..KKPPPPPPPPKK..",
+    ".KPPKKKKKKKKPPK.",
+    ".KPKK......KKPK.",
+    ".KPK........KPK.",
+    "KKPKK......KKPKK",
+    "KPPPK......KPPPK",
+    "KPWPK......KPWPK",
+    "KPWPK......KPWPK",
+    "KPPPK......KPPPK",
+    "KKKKK......KKKKK",
+    "................",
+    "................",
+    "................"
+  ],
+  movie: [
+    "..........KKKKK.",
+    ".......KKKWWDKK.",
+    "....KKKWWDDKK...",
+    "..KKKWWDDKK.....",
+    ".KKWWDDKK.......",
+    ".KKKKKKKKKKKKKK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KDLLLLLLLLLLDK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KDLLLLLLLLLLDK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KDLLLLLLLLLLDK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KDDDDDDDDDDDDK.",
+    ".KKKKKKKKKKKKKK.",
+    "................"
+  ],
+  bin: [
+    "................",
+    "..KKKKKKKKKKKK..",
+    ".KWWWWWWWWWWWWK.",
+    ".KLLLLLLLLLLLLK.",
+    ".KKKKKKKKKKKKKK.",
+    ".KWLLLLPPLLLLLK.",
+    ".KWLLLPPPPLLLLK.",
+    ".KWLLPPPPPPLLLK.",
+    "..KWLLLLPPLLLK..",
+    "..KWLLLLPPLLLK..",
+    "..KWLPLLLLLPLK..",
+    "..KWLPPLLLPPLK..",
+    "...KWPPPLPPPLK..",
+    "...KWLPPLPPLLK..",
+    "...KDDDDDDDDDK..",
+    "....KKKKKKKKK..."
+  ]
+};
+
+const TOOL_ART = {
+  back: ["................","................",".......K........","......KK........",".....KPK........","....KPPKKKKKKK..","...KPPPPPPPPPK..","..KPPPPPPPPPPK..","...KPPPPPPPPPK..","....KPPKKKKKKK..",".....KPK........","......KK........",".......K........","................","................","................"],
+  fwd:  ["................","................","........K.......","........KK......","........KPK.....","..KKKKKKKPPK....","..KPPPPPPPPPK...","..KPPPPPPPPPPK..","..KPPPPPPPPPK...","..KKKKKKKPPK....","........KPK.....","........KK......","........K.......","................","................","................"],
+  up:   ["................","..KKKK..........",".KLLLLKKKKKKKK..",".KLLLLLLLLLLLK..",".KLLLLLLLLLLLK..",".KLLLLLWLLLLLK..",".KLLLLWWWLLLLK..",".KLLLWWWWWLLLK..",".KLLWWWWWWWLLK..",".KLLLLLWLLLLLK..",".KLLLLLWLLLLLK..",".KPPPPPPPPPPPK..",".KKKKKKKKKKKKK..","................","................","................"],
+  cut:  ["................","...K........K...","...KK......KK...","....KK....KK....","....KK....KK....",".....KK..KK.....","......KKKK......",".......KK.......","......KKKK......",".....KK..KK.....","....KPK..KPK....","...KPPPKKPPPK...","...KPPPKKPPPK...","....KPKKKKPK....",".....KKKKKK.....","................"],
+  copy: ["................","....KKKKKKK.....","....KWWWWWKK....","....KWDDDWKWK...","....KWWWWWKKK...","..KKKKKKKKKKK...","..KWWWWWWWKKK...","..KWDDDDDWWK....","..KWWWWWWWWK....","..KWDDDDDWWK....","..KWWWWWWWWK....","..KWDDDWWWWK....","..KWWWWWWWWK....","..KKKKKKKKKK....","................","................"],
+  paste:["................",".....KKKK.......","...KKKWWKKK.....","...KWWWWWWWK....","...KWKKKKKWK....","...KWWWWWWWK....","...KWDDDDDWK....","...KWWWWWWWK....","...KWDDDDDWK....","...KWWWWWWWK....","...KWDDDWWWK....","...KWWWWWWWK....","...KKKKKKKKK....","................","................","................"],
+  undo: ["................","................","......KKKK......",".....KPPPPK.....","....KPK..KPK....","...KPK....KPK...","...KPK....KPK...","..KKPKK...KPK...","..KPPPPK..KPK...","...KPPK...KPK...","....KK....KPK...","..........KPK...","................","................","................","................"],
+  del:  ["................","................","..KK........KK..","..KDKK....KKDK..","...KDDK..KDDK...","....KDDKKDDK....",".....KDDDDK.....","......KDDK......",".....KDDDDK.....","....KDDKKDDK....","...KDDK..KDDK...","..KDKK....KKDK..","..KK........KK..","................","................","................"],
+  prop: ["................","...KKKKKKKKK....","...KWWWWWWWKK...","...KWDDDDDWKWK...","...KWWWWWWWKKK..","...KWDDDDDWWWK..","...KWWWWWWWWWK..","...KWDDDDDWWWK..","...KWWWWWWWWWK..","...KWDDDWWWWWK..","...KWWWWWWWWWK..","...KKKKKKKKKKK..","................","................","................","................"],
+  views:["................","..KKKKKKKKKKKK..","..KLLLLLLLLLLK..","..KKKKKKKKKKKK..","..KDKKDDDDDDLK..","..KDKKDDDDDDLK..","..KLLLLLLLLLLK..","..KDKKDDDDDDLK..","..KDKKDDDDDDLK..","..KLLLLLLLLLLK..","..KDKKDDDDDDLK..","..KDKKDDDDDDLK..","..KKKKKKKKKKKK..","................","................","................"]
+};
+
+const ART = ART32;
+const START_ART = ["WWWKPPP","WWWKPPP","WWWKPPP","KKKKKKK","PPPKWWW","PPPKWWW","PPPKWWW"];
+const TRAY_ART = ["........","..KKKK..",".KPPPPK.","KPWPPWPK","KPPPPPPK","KPWPPWPK",".KPPPPK.","..KKKK.."];
+
+const LAYOUT = [
+  { id:'bin',     label:'Trash',           art:'bin',    left:10,  top:10 },
+  { id:'projects',label:'Projects',        art:'folder', left:10,  top:98 },
+  { id:'work',    label:'Resume',          art:'folder', left:10,  top:186 },
+  { id:'world',   label:'My World',        art:'world',  left:10,  top:288 },
+  { id:'music',   label:'Music',           art:'music',  left:96,  top:10 },
+  { id:'movies',  label:'Movies',          art:'movie',  left:96,  top:98 },
+  { id:'about',   label:'About Me',        art:'about',  left:96,  top:186 }
+];
+
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    const pos = {};
+    LAYOUT.forEach(i => { pos[i.id] = { left:i.left, top:i.top }; });
+    this.state = { pos, sel:null, clock:'', z:{}, topZ:10,
+      winOpen:false, winLeft:260, winTop:80, startDown:false, fileSel:'about',
+      folderOpen:true, folderLeft:150, folderTop:40, docSel:null,
+      folderMin:false, folderMax:false, winMin:false,
+      docWinOpen:false, docWinMin:false, docWinMax:true, docWinLeft:40, docWinTop:24,
+      resOpen:false, resMin:false, resMax:true, resLeft:60, resTop:30,
+      docScrollTop:0, docScrollH:1, docClientH:1,
+      eduWinOpen:false, eduWinMin:false, eduWinMax:true, eduWinLeft:60, eduWinTop:40,
+      eduScrollTop:0, eduScrollH:1, eduClientH:1,
+      dlgOpen:false, dlgTitle:'', dlgMsg:'', dlgDx:0, dlgDy:0,
+      projOpen:true, projLeft:330, projTop:200, projMin:false, projMax:false, projSel:null,
+      ieOpen:false, ieLeft:150, ieTop:40, ieMin:false, ieMax:false, ieProj:'p1',
+      lightSrc:null, lightAlt:'' };
+    this.pages = {
+      p1: { title:'KC Intern Map', url:'https://kc-intern-map.dimin.io/', task:'Project 1', status:'KC Intern Map',
+            stack:['Vue 3','Vite','Vue Router','Leaflet','GSAP 3 + ScrollTrigger','Lenis','Django','PostgreSQL','Docker','Heroku'],
+            shotsLeft:[{src:'./kcim-home.png',alt:'KC Intern Map homepage'},{src:'./kcim-map.png',alt:'KC Intern Map interactive map'}],
+            shotsRight:[{src:'./kcim-detail.png',alt:'KC Intern Map place-detail page'}],
+            shotCols:'1.45fr 1fr',
+            capTop:'left: homepage and the interactive map',
+            capBottom:'right: place-detail page',
+            p1:'KC Intern Map is an interactive full-stack web app started in July 2026 during my internship at Dimensional Innovations and still in active development. It lets interns in Kansas City share and discover their favorite spots around the city \u2014 restaurants, parks, hangouts, anything worth visiting. The idea came from a simple problem: interns usually only have a summer or a semester to explore a new city, and the best recommendations come from other interns, not a generic travel guide. The project began as a manually hand-built app and grew into a full AI-assisted redesign experiment.',
+            p2:'Users can pin places they love on an interactive Leaflet map, browse pins from other interns, and view details on each spot. The project evolved in stages, each kept on its own branch to show progression over time: an original hand-built version, a first AI-assisted redesign done with a single prompt, and a second, more deliberate AI-assisted redesign using a full design workflow \u2014 research-driven prompts, official design plugins, an approved design-token system, and screens built one at a time with feedback loops in between.',
+            p3:'The current frontend runs on Vue 3, Leaflet for the interactive map, and GSAP for animation, with design tokens (color, type, spacing, motion) defined once and reused across every screen. The private Django/Docker/PostgreSQL backend (with S3 storage, deployed on Heroku) isn\u2019t public for privacy reasons, but the frontend is fully live.',
+            role:'Sole developer \u2014 designed and built the full frontend and backend, including the AI-assisted design workflow (prompt engineering, plugin selection, design-token system) for the current version. I also pitched the project beyond the internship itself, presenting it to the Kansas City Area Development Council \u2014 specifically Team KC, the group focused on retaining internship talent in the Kansas City area \u2014 as a tool to help with that mission.',
+            process:'Work moved through three branches, each a full pass over the app. The manual build established the data model, the map interaction, and the pin flow by hand. The first AI-assisted pass rebuilt the interface from a single prompt, which produced something coherent but generic and hard to steer. The refined pass replaced that with a real workflow: research-driven prompts, official design plugins, and an approved design-token system agreed on before any screen was built. Screens were then generated one at a time \u2014 each one tested in the browser, reviewed against the tokens, and revised with feedback before moving on to the next.' },
+      p2: { title:'Agent Fluffy Bunny', url:'https://agent-fluffy-bunny.vercel.app/', task:'Project 2', status:'Agent Fluffy Bunny',
+            stack:['React 19','Vite','Tailwind CSS v4','Express','OpenAI API','Web Speech API'],
+            shotsLeft:[{src:'./afb-select.png',alt:'Agent Fluffy Bunny character selection'},{src:'./afb-chat.png',alt:'Agent Fluffy Bunny chat interface'}],
+            shotsRight:[], shotCols:'1fr',
+            capTop:'top: character selection',
+            capBottom:'bottom: the chat interface',
+            p1:'Agent Fluffy Bunny is a fun and interactive AI-powered personal assistant, built with a peer for my university\u2019s student symposium. The assistant takes the form of a fluffy bunny character on screen, with emoji expressions that change to visually match the tone of its responses, making interactions feel more engaging and lively. It\u2019s designed to function similarly to fictional AI assistants like Jarvis from Iron Man \u2014 holding natural conversations, answering questions, and assisting with everyday tasks.',
+            p2:'The assistant runs on a React 19 + Vite frontend and an Express backend powered by the OpenAI Node SDK. Users pick a bunny character and costume, then chat by text or speech \u2014 the app uses browser speech recognition and text-to-speech playback, with a custom wake phrase ("come in agent fluffy bunny") for hands-free activation, plus stop and end-conversation phrases. It features an intentionally over-positive, "hopecore"-inspired personality, offering encouraging and philosophical responses. Beyond conversation, it can perform practical tasks: opening websites, playing music, taking notes, sending hopecore quotes, and fetching info like weather updates.',
+            p3:'The project includes rate limiting, per-IP daily quotas, and server-side API key protection to safely support a public demo at a symposium setting. It\u2019s deployed with the frontend on Vercel and the backend as a separate Node web service.',
+            role:'Co-developer, working with a peer at my university to build this as an AI agent for our school\u2019s student symposium.',
+            process:'' },
+      p3: { title:'Bank Appointment Booking System', url:'https://github.com/jordan-can-dunk/commerce-bank-appointment-creator', repo:true, task:'Project 3', status:'Bank Appointment Booking System',
+            stack:[],
+            stackGroups:[
+              { title:'Frontend', items:['JavaScript','React','Vite','Tailwind CSS'] },
+              { title:'Backend', items:['Java','Spring Boot (3-layer: Controller, Service, Repository)','RESTful API','JPA + Hibernate','MySQL','SMTP (Gmail)','CORS security config'] },
+              { title:'Tools', items:['Postman','MySQL Workbench','MySQL CLI','Git + GitHub','Gradle'] }
+            ],
+            gallery:[
+              {src:'./bank-welcome.png',alt:'Welcome page \u2014 booking entry point and the three-step overview'},
+              {src:'./bank-datetime.png',alt:'Step 3 of 5 \u2014 choosing a date and an available 30-minute slot'},
+              {src:'./bank-confirm.png',alt:'Step 5 of 5 \u2014 reviewing topic, branch, time, and contact before reserving'},
+              {src:'./bank-confirmed.png',alt:'Appointment confirmed \u2014 reserved slot, appointment number, and details'},
+              {src:'./bank-signup.png',alt:'Sign-up page \u2014 creating an online banking profile'},
+              {src:'./bank-dashboard.png',alt:'Account dashboard \u2014 upcoming and previous appointments with reschedule and cancel'}
+            ],
+            process:'',
+            p1:'This is a full-stack web application that allows customers to schedule appointments with representatives at a Commerce Bank branch, built with a team in my software development class for Commerce Bank. Users select a reason for their visit, choose a branch that supports that service, pick an available 30-minute time slot, and confirm their booking. Once scheduled, the system reserves the time slot and prevents double booking.',
+            p2:'The app follows a three-tier architecture \u2014 a React frontend, a Spring Boot REST API for business logic and validation, and a MySQL database storing topics, branches, branch-topic relationships, and appointments. Appointment reasons (like Loans, Credit Cards, Account Opening, Mortgage Consultation) are stored in the database, and the branch list dynamically filters based on the selected topic. Booking conflicts are prevented at the database level, and all fields \u2014 including email format \u2014 are validated before submission.',
+            p3:'The system enforces real business requirements: no double booking for the same branch and time slot, all slots fixed at exactly 30 minutes, and every branch limited to the topics it actually supports. Planned stretch goals include dynamic business hours by branch, appointment cancellation/rescheduling, and an admin dashboard.',
+            role:'Built as part of a team in my software development class, developed specifically for Commerce Bank. My individual contributions included:',
+            roleList:[
+              'Implemented SMTP email functionality so users receive confirmation emails after booking appointments',
+              'Configured the MySQL database to store appointment data with proper constraints',
+              'Built RESTful endpoints to handle appointment creation and retrieval',
+              'Organized the service layer to store business logic \u2014 validation for future dates, static business hours, time slot availability, and ensuring valid topic-branch relationships before saving appointments',
+              'Configured CORS to allow the frontend to communicate with the backend'
+            ],
+            roleOutro:'The team collaborated through FaceTime meetings, Google Meets, and iMessage group chats, and used GitHub Issues to divide task responsibilities.' },
+      p4: { title:'Barbie Hangman: Dress Up & Guess', url:'https://barbie-hangman.vercel.app/', repo:true, repoLabel:'Live at',
+            task:'Project 4', status:'Barbie Hangman', lead:'Barbie Hangman',
+            stack:['React 19','Vite','JavaScript (ES6+)','Vanilla CSS','Antigravity','ChatGPT'],
+            shotsLeft:[
+              {src:'./barbie-choose.png',alt:'Choose My Barbie screen'},
+              {src:'./barbie-play.png',alt:'Barbie Hangman mid-game'}
+            ],
+            shotsRight:[{src:'./barbie-won.png',alt:'Winning screen'}],
+            shotCols:'1fr 1fr',
+            capTop:'left: choosing and naming your Barbie, then playing',
+            capBottom:'right: winning \u2014 Barbie steps out of the box',
+            process:'',
+            p1:'Barbie Hangman is a Barbie-themed version of Hangman that lets players pick and name a Barbie they’re playing to save. Instead of a traditional gallows, the selected Barbie stands inside a classic toy box — and instead of "hanging," when the player wins, Barbie physically steps out of the box to celebrate. The project takes the classic word-guessing game and gives it a fully custom, glamorous makeover.',
+            p2:'Players start on a dedicated character-selection screen where they name their Barbie and choose from a scrolling picture carousel before the game begins. The game itself runs on standard Hangman logic \u2014 guess letters on a keyboard to reveal the hidden word before running out of attempts \u2014 but wrapped in a fully custom UI: 3D gradients, drop shadows, cursive script headers, and a responsive Flexbox layout built to look good on both desktop and mobile.',
+            p3:'Built with React 19 and Vite, using vanilla CSS for all custom styling and animation (no UI framework), and JavaScript for the game logic, keyboard, and character-selection data. Built using Google\u2019s AI IDE, Antigravity as an extended version of a project I made for my practical AI class.',
+            role:'Solo project \u2014 designed and built the full game using AI, including the character-selection flow, win/lose logic, and custom visual style.' },
+      p5: { title:'Valentine Candy Battle', url:'https://valentine-candy-battle.vercel.app/', repo:true, repoLabel:'Live at',
+            task:'Project 5', status:'Valentine Candy Battle',
+            stack:['React','Vite','JavaScript','CSS','ChatGPT'],
+            shotsLeft:[
+              {src:'./vcb-battle.png',alt:'Candy battle card matchup'},
+              {src:'./vcb-results.png',alt:'Final round results'}
+            ],
+            shotsRight:[{src:'./vcb-surprise.png',alt:'Valentine surprise screen'}],
+            shotCols:'1.45fr 1fr',
+            caps:['left: the candy battle card and the final round results','right: the Valentine surprise screen'],
+            role:'', process:'',
+            p1:'Valentine Candy Battle is a playful Valentine-themed candy matchup game, built to get information out of the people I wanted to buy Valentine’s presents for. Players choose their favorite candy in a card-vs-card battle format across three categories — Sour, Sweet, and Chocolate — and finish with a randomized surprise screen.',
+            p2:'The gameplay is a simple card-vs-card selection flow: two candies face off, the player picks their favorite, and the game moves through each category until a final surprise screen appears. The whole experience is wrapped in a responsive, animated, festive card UI.',
+            p3:'This was my first side coding project. I built it mainly by copying and pasting code from ChatGPT, without yet knowing how to use tools like Claude Code or the ChatGPT extension in VS Code \u2014 I\u2019ve learned a lot since, but I still wanted to keep this one on my portfolio as an early step in that process.' }
+    };
+    this.docScrollRef = React.createRef();
+    this.docTrackRef = React.createRef();
+    this.eduScrollRef = React.createRef();
+    this.eduTrackRef = React.createRef();
+    this.toolShadows = {};
+    Object.keys(TOOL_ART).forEach(k => { this.toolShadows[k] = shadow(TOOL_ART[k], 1); });
+    this.shadows = {};
+    Object.keys(ART).forEach(k => { this.shadows[k] = shadow(ART[k], 1); });
+    this.startShadow = shadow(START_ART, 3);
+    this.trayShadow = shadow(TRAY_ART, 3);
+    this.taskShadow = shadow(ART_OLD.about, 1);
+    this.onMove = this.onMove.bind(this);
+    this.onUp = this.onUp.bind(this);
+  }
+
+  hydrateShots() {
+    document.querySelectorAll('img[data-shot]').forEach(img => {
+      const src = img.getAttribute('data-shot');
+      if (src && src.indexOf('{{') === -1 && img.getAttribute('src') !== src) img.setAttribute('src', src);
+    });
+  }
+  componentDidUpdate() { this.hydrateShots(); }
+  componentDidMount() {
+    this.hydrateShots();
+    this.onResize = () => this.forceUpdate();
+    window.addEventListener('resize', this.onResize);
+    this.tick();
+    this.timer = setInterval(() => this.tick(), 15000);
+    window.addEventListener('pointermove', this.onMove);
+    window.addEventListener('pointerup', this.onUp);
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerup', this.onUp);
+  }
+  tick() {
+    const d = new Date();
+    let h = d.getHours(); const ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    const m = String(d.getMinutes()).padStart(2, '0');
+    this.setState({ clock: h + ':' + m + ' ' + ampm });
+  }
+  down(id, e) {
+    e.stopPropagation();
+    const p = this.state.pos[id];
+    this.drag = { id, dx: e.clientX - p.left, dy: e.clientY - p.top, from: { left:p.left, top:p.top }, moved:false };
+    const topZ = this.state.topZ + 1;
+    this.setState(s => ({ sel:id, topZ, z: Object.assign({}, s.z, { [id]: topZ }) }));
+  }
+  onMove(e) {
+    if (this.thumbDrag) {
+      const d = this.thumbDrag;
+      const el = this[d.k + 'ScrollRef'].current;
+      if (el) {
+        el.scrollTop = d.startScroll + (e.clientY - d.startY) / d.span * d.max;
+        this.syncScroll(d.k);
+      }
+      return;
+    }
+    if (this.winDrag) {
+      const which = this.winDrag.which;
+      const w = Math.min((which === 'folder' || which === 'proj') ? 760 : (which === 'doc' || which === 'edu' || which === 'res') ? 980 : which === 'ie' ? 900 : 700, window.innerWidth * 0.94);
+      const left = Math.max(0, Math.min(window.innerWidth - w, e.clientX - this.winDrag.dx));
+      const top = Math.max(0, Math.min(window.innerHeight - 44 - 180, e.clientY - this.winDrag.dy));
+      if (which === 'folder') this.setState({ folderLeft:left, folderTop:top });
+      else if (which === 'proj') this.setState({ projLeft:left, projTop:top });
+      else if (which === 'ie') this.setState({ ieLeft:left, ieTop:top });
+      else if (which === 'doc') this.setState({ docWinLeft:left, docWinTop:top });
+      else if (which === 'edu') this.setState({ eduWinLeft:left, eduWinTop:top });
+      else if (which === 'res') this.setState({ resLeft:left, resTop:top });
+      else this.setState({ winLeft:left, winTop:top });
+      return;
+    }
+    if (!this.drag) return;
+    const { id, dx, dy } = this.drag;
+    const left = Math.max(0, Math.min(window.innerWidth - 78, e.clientX - dx));
+    const top = Math.max(0, Math.min(window.innerHeight - 110, e.clientY - dy));
+    if (Math.abs(left - this.drag.from.left) > 3 || Math.abs(top - this.drag.from.top) > 3) this.drag.moved = true;
+    this.setState(s => ({ pos: Object.assign({}, s.pos, { [id]: { left, top } }) }));
+  }
+  overBin(id) {
+    const b = this.state.pos.bin, p = this.state.pos[id];
+    if (!b || !p) return false;
+    return Math.abs((p.left + 39) - (b.left + 39)) < 58 && Math.abs((p.top + 40) - (b.top + 40)) < 58;
+  }
+  onUp() {
+    const d = this.drag;
+    if (d && d.moved && d.id !== 'bin' && this.overBin(d.id)) {
+      this.setState(s => ({
+        pos: Object.assign({}, s.pos, { [d.id]: d.from }),
+        dlgOpen:true, dlgTitle:'Trash Bin', dlgMsg:'Error. Too #awesome to delete', dlgDx:0, dlgDy:0
+      }));
+    }
+    this.drag = null; this.winDrag = null; this.thumbDrag = null; this.dlgDrag = null;
+    this.setState({ startDown:false });
+  }
+
+  printResume() {
+    const sheet = document.getElementById('resume-sheet');
+    if (!sheet) return;
+    const old = document.getElementById('resume-print');
+    if (old) old.remove();
+    const holder = document.createElement('div');
+    holder.id = 'resume-print';
+    const clone = sheet.cloneNode(true);
+    clone.removeAttribute('id');
+    holder.appendChild(clone);
+    document.body.appendChild(holder);
+
+    const probe = document.createElement('div');
+    probe.style.cssText = 'position:absolute;left:-9999px;top:0;width:1in;height:1in;';
+    document.body.appendChild(probe);
+    const dpi = probe.offsetWidth || 96;
+    probe.remove();
+    const pageW = 7.3 * dpi, pageH = 9.5 * dpi;
+
+    clone.style.maxWidth = 'none';
+    clone.style.padding = '0';
+    clone.style.border = '0';
+    clone.style.boxShadow = 'none';
+    holder.style.cssText = 'position:absolute;left:-9999px;top:0;display:block;';
+    let s = 1;
+    for (let i = 0; i < 24; i++) {
+      holder.style.width = (pageW / s) + 'px';
+      clone.style.width = (pageW / s) + 'px';
+      if (clone.scrollHeight * s <= pageH) { s = Math.max(0.5, s - 0.02); break; }
+      s -= 0.02;
+      if (s < 0.5) break;
+    }
+    holder.style.cssText = 'display:none;';
+    holder.style.zoom = s;
+    clone.style.width = 'auto';
+    document.body.setAttribute('data-printing', '1');
+    const cleanup = () => {
+      document.body.removeAttribute('data-printing');
+      const h = document.getElementById('resume-print');
+      if (h) h.remove();
+      window.removeEventListener('afterprint', cleanup);
+    };
+    window.addEventListener('afterprint', cleanup);
+    setTimeout(() => { window.print(); setTimeout(cleanup, 1200); }, 60);
+  }
+  winDown(e) {
+    this.winDrag = { which:'win', dx: e.clientX - this.state.winLeft, dy: e.clientY - this.state.winTop };
+    this.setState({ startDown:false });
+  }
+  folderDown(e) {
+    this.winDrag = { which:'folder', dx: e.clientX - this.state.folderLeft, dy: e.clientY - this.state.folderTop };
+    this.setState({ startDown:false });
+  }
+  syncScroll(k) {
+    const el = this[k + 'ScrollRef'].current;
+    if (!el) return;
+    this.setState({ [k + 'ScrollTop']: el.scrollTop, [k + 'ScrollH']: el.scrollHeight, [k + 'ClientH']: el.clientHeight });
+  }
+  thumbGeom(k) {
+    const track = this[k + 'TrackRef'].current;
+    const trackH = track ? track.clientHeight : 100;
+    const sh = this.state[k + 'ScrollH'], ch = this.state[k + 'ClientH'], st = this.state[k + 'ScrollTop'];
+    const ratio = sh > 0 ? Math.min(1, ch / sh) : 1;
+    const thumbH = Math.max(24, Math.round(trackH * ratio));
+    const maxScroll = Math.max(1, sh - ch);
+    const top = Math.round((trackH - thumbH) * Math.min(1, st / maxScroll));
+    return { trackH, thumbH, top, maxScroll };
+  }
+  scrollByK(k, dy) {
+    const el = this[k + 'ScrollRef'].current;
+    if (!el) return;
+    el.scrollTop += dy;
+    this.syncScroll(k);
+  }
+  thumbDown(k, e) {
+    e.stopPropagation();
+    const g = this.thumbGeom(k);
+    this.thumbDrag = { k, startY: e.clientY, startScroll: this.state[k + 'ScrollTop'], span: Math.max(1, g.trackH - g.thumbH), max: g.maxScroll };
+  }
+  trackDown(k, e) {
+    const track = this[k + 'TrackRef'].current;
+    const el = this[k + 'ScrollRef'].current;
+    if (!track || !el) return;
+    const g = this.thumbGeom(k);
+    const y = e.clientY - track.getBoundingClientRect().top;
+    el.scrollTop = y < g.top ? el.scrollTop - this.state[k + 'ClientH'] : el.scrollTop + this.state[k + 'ClientH'];
+    this.syncScroll(k);
+  }
+  syncDocScroll() { this.syncScroll('doc'); }
+  eduWinDown(e) {
+    this.winDrag = { which:'edu', dx: e.clientX - this.state.eduWinLeft, dy: e.clientY - this.state.eduWinTop };
+    this.setState({ startDown:false });
+  }
+  docWinDown(e) {
+    this.winDrag = { which:'doc', dx: e.clientX - this.state.docWinLeft, dy: e.clientY - this.state.docWinTop };
+    this.setState({ startDown:false });
+  }
+
+  shadowsFor(accent) {
+    if (!this._cache) this._cache = {};
+    if (this._cache[accent]) return this._cache[accent];
+    const prev = PAL.P;
+    PAL.P = accent;
+    const out = {};
+    Object.keys(ART).forEach(k => { out[k] = shadow(ART[k], 1); });
+    PAL.P = prev;
+    this._cache[accent] = out;
+    return out;
+  }
+
+  projTopClamped() {
+    const vh = window.innerHeight;
+    return Math.max(6, Math.min(this.state.projTop, vh - 44 - 8 - 300));
+  }
+  folderTopClamped() {
+    const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+    return Math.max(6, Math.min(this.state.folderTop, vh - 44 - 180));
+  }
+
+  renderVals() {
+    const vw = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+    const pg = this.pages[this.state.ieProj] || this.pages.p1;
+    const sel = this.state.sel;
+    const accent = this.props.accentPink;
+    const plates = this.props.labelPlates === true;
+    const art = accent && accent !== '#FF6FA5' ? this.shadowsFor(accent) : this.shadows;
+    const icons = LAYOUT.map(i => {
+      const p = this.state.pos[i.id];
+      const on = sel === i.id;
+      return {
+        label: i.label,
+        left: p.left,
+        top: p.top,
+        z: this.state.z[i.id] || 5,
+        shadow: art[i.art],
+        iconFilter: on ? 'brightness(.88) saturate(1.3)' : 'none',
+        cellBg: on ? 'rgba(255,111,165,.28)' : 'transparent',
+        cellOutline: on ? '1px dotted #7A1F45' : 'none',
+        labelColor: '#FFFFFF',
+        labelBg: on ? '#7A1F45' : (plates ? 'rgba(209,78,134,.9)' : '#D14E86'),
+        labelBorder: on ? '1px dotted #FFE3F1' : '1px solid transparent',
+        textShadow: 'none',
+        onPointerDown: (e) => this.down(i.id, e),
+        onDoubleClick: () => {
+          if (i.id === 'work') this.setState({ folderOpen:true, folderMin:false });
+          else if (i.id === 'projects') this.setState({ projOpen:true, projMin:false });
+          else if (i.id === 'bin') this.setState({ dlgOpen:true, dlgTitle:'Trash Bin', dlgMsg:'Nothing here. Everything on this site is too #awesome to delete', dlgDx:0, dlgDy:0 });
+          else this.setState({ dlgOpen:true, dlgTitle:i.label, dlgMsg:'This screen is still stuck in 1995. Updates coming in the next few weeks \u2014 check back soon!', dlgDx:0, dlgDy:0 });
+        }
+      };
+    });
+    const FILES = [
+      { id:'about',    label:'About Me',         art:'about'  },
+      { id:'projects', label:'Projects',         art:'folder' },
+      { id:'work',     label:'Resume',           art:'folder' },
+      { id:'world',    label:'My World',         art:'world'  },
+      { id:'music',    label:'Music',            art:'music'  },
+      { id:'movies',   label:'Movies',           art:'movie'  }
+    ];
+    const fs = this.state.fileSel;
+    const files = FILES.map(f => ({
+      label: f.label,
+      shadow: art[f.art],
+      bg: fs === f.id ? '#FFD9EA' : 'transparent',
+      color: fs === f.id ? '#7A1F45' : '#B0447C',
+      onClick: () => this.setState({ fileSel: f.id })
+    }));
+    const down = this.state.startDown || this.state.winOpen;
+    return {
+      icons,
+      files,
+      previewText: 'Nothing here yet',
+      clock: this.state.clock,
+      startShadow: this.startShadow,
+      trayShadow: this.trayShadow,
+      winOpen: this.state.winOpen,
+      taskItems: [
+        this.state.winOpen && { id:'win', label:'My Computer', shadow: art.about, active: !this.state.winMin },
+        this.state.folderOpen && { id:'folder', label:'Resume', shadow: art.folder, active: !this.state.folderMin },
+        this.state.projOpen && { id:'proj', label:'Projects', shadow: art.folder, active: !this.state.projMin },
+        this.state.resOpen && { id:'res', label:'Jordan_Duncan_Resume', shadow: art.dl, active: !this.state.resMin },
+        this.state.ieOpen && { id:'ie', label:(this.pages[this.state.ieProj] || this.pages.p1).task, shadow: art.ie, active: !this.state.ieMin },
+        this.state.docWinOpen && { id:'doc', label:'Work Experience', shadow: art.doc, active: !this.state.docWinMin },
+        this.state.eduWinOpen && { id:'edu', label:'Academic Experience', shadow: art.doc, active: !this.state.eduWinMin }
+      ].filter(Boolean).map(t => ({
+        label: t.label,
+        shadow: t.shadow,
+        bg: t.active ? '#FFB2D5' : '#FFC9E1',
+        light: t.active ? '#C94C81' : '#FFF3F8',
+        dark: t.active ? '#FFF3F8' : '#C94C81',
+        onClick: (e) => {
+          e.stopPropagation();
+          if (t.id === 'win') this.setState(s => ({ winMin: !s.winMin }));
+          else if (t.id === 'proj') this.setState(s => ({ projMin: !s.projMin }));
+          else if (t.id === 'ie') this.setState(s => ({ ieMin: !s.ieMin }));
+          else if (t.id === 'doc') this.setState(s => ({ docWinMin: !s.docWinMin }));
+          else if (t.id === 'edu') this.setState(s => ({ eduWinMin: !s.eduWinMin }));
+          else if (t.id === 'res') this.setState(s => ({ resMin: !s.resMin }));
+          else this.setState(s => ({ folderMin: !s.folderMin }));
+        }
+      })),
+      winDisplay: this.state.winMin ? 'none' : 'block',
+      winLeft: Math.max(6, Math.min(this.state.winLeft, vw - Math.min(700, vw * 0.94) - 6)),
+      winTop: this.state.winTop,
+      startBg: down ? '#FFB2D5' : '#FFC9E1',
+      startLight: down ? '#C94C81' : '#FFF3F8',
+      startDark: down ? '#FFF3F8' : '#C94C81',
+      onStart: (e) => { e.stopPropagation(); this.setState(s => ({ winOpen: !s.winOpen, winMin: false, startDown: true })); },
+      onWinDown: (e) => { e.stopPropagation(); this.winDown(e); },
+      onClose: (e) => { e.stopPropagation(); this.setState({ winOpen:false }); },
+      projItems: [
+        { id:'p1', label:'Project 1', art:'ie' },
+        { id:'p2', label:'Project 2', art:'ie' },
+        { id:'p3', label:'Project 3', art:'ie' },
+        { id:'p4', label:'Project 4', art:'ie' },
+        { id:'p5', label:'Project 5', art:'ie' },
+        { id:'c1', label:'Disc 1', art:'cd' },
+        { id:'c2', label:'Disc 2', art:'cd' },
+        { id:'c3', label:'Disc 3', art:'cd' }
+      ].map(p => ({
+        label: p.label,
+        shadow: art[p.art],
+        bg: this.state.projSel === p.id ? 'rgba(209,78,134,.16)' : 'transparent',
+        labelBg: this.state.projSel === p.id ? '#D14E86' : 'transparent',
+        color: this.state.projSel === p.id ? '#FFF6FA' : '#5C1533',
+        onClick: (e) => {
+          e.stopPropagation();
+          if (this.pages[p.id]) this.setState({ projSel:p.id, ieOpen:true, ieMin:false, ieProj:p.id });
+          else this.setState({ projSel:p.id });
+        }
+      })),
+      ieOpen: this.state.ieOpen,
+      ieVis: this.state.ieMin ? 'hidden' : 'visible',
+      ieWidth: this.state.ieMax ? vw + 'px' : '900px',
+      ieMaxW: this.state.ieMax ? 'none' : '94vw',
+      ieHeight: this.state.ieMax ? (vh - 44) + 'px' : Math.min(600, vh - 44 - Math.max(6, Math.min(this.state.ieTop, vh - 44 - 180)) - 8) + 'px',
+      ieLeft: this.state.ieMax ? '0px' : Math.max(6, Math.min(this.state.ieLeft, vw - Math.min(900, vw * 0.94) - 6)) + 'px',
+      ieTop: this.state.ieMax ? '0px' : Math.max(6, Math.min(this.state.ieTop, vh - 44 - 180)) + 'px',
+      ieIconShadow: art.ie,
+      wikiNav: [
+        { title:'Navigation', links:['Main page','Contents','About Author','Hire Author'] },
+        { title:'Interaction', links:['Help','About Projectpedia','Donate to Projectpedia','Projectpedia Store','Hire Maker of Projectpedia'] },
+        { title:'Tools', links:['Help','Page information','Cite this page','Report Fake Links'] },
+        { title:'Languages', links:['English','That\'s All I know...Sorry','Maybe Italian In a Few Years'] }
+      ],
+      techStack: (this.pages[this.state.ieProj] || this.pages.p1).stack.map((name, i) => ({ n: i + 1, name })),
+      ieTitle: (this.pages[this.state.ieProj] || this.pages.p1).title,
+      ieStatus: (this.pages[this.state.ieProj] || this.pages.p1).status,
+      ieUrl: (this.pages[this.state.ieProj] || this.pages.p1).url,
+      ieHasBoldLead: !pg.p1 || pg.p1.indexOf(pg.lead || pg.title) === 0,
+      ieNoBoldLead: !!pg.p1 && pg.p1.indexOf(pg.lead || pg.title) !== 0,
+      ieLead: pg.lead || pg.title,
+      iePara1Rest: pg.p1 ? pg.p1.slice(pg.p1.indexOf(pg.lead || pg.title) === 0 ? (pg.lead || pg.title).length : 0) : ' is a [one-line summary of what the project is] built between [start date] and [end date].',
+      iePara1: pg.p1 || '[One-line summary of what the project is, built between [start date] and [end date]. Describe the problem it solves and who it is for.]',
+      iePara2: pg.p2 || '[Second paragraph: describe how it works. Walk through the main flow a user takes, the parts of the system you designed or built yourself, and any constraint that shaped the result.]',
+      iePara3: pg.p3 || '[Third paragraph: outcome. What shipped, what you measured, what you would change.]',
+      ieRole: pg.role || '[Your role on the project, collaborators, and what you personally owned.]',
+      ieProcess: pg.process || '[Research, sketches, iterations, testing. Mention what you tried that did not work.]',
+      ieHasShots: !!(pg.shotsLeft && pg.shotsLeft.length),
+      ieNoShots: !(pg.shotsLeft && pg.shotsLeft.length) && !(pg.gallery && pg.gallery.length),
+      lightOpen: !!this.state.lightSrc,
+      lightSrc: this.state.lightSrc || '',
+      lightAlt: this.state.lightAlt || '',
+      onLightClose: (e) => { e.stopPropagation(); this.setState({ lightSrc:null, lightAlt:'' }); },
+      onShotOpen: (e) => {
+        e.stopPropagation();
+        const img = e.currentTarget.querySelector('img');
+        if (!img) return;
+        const src = img.getAttribute('data-shot') || img.getAttribute('src');
+        if (src) this.setState({ lightSrc: src, lightAlt: img.getAttribute('alt') || '' });
+      },
+      ieHasRole: pg.role === undefined ? true : !!pg.role,
+      ieCaps: pg.caps || [pg.capTop || 'top: [screen name] and [screen name]'].concat(
+        (pg.capBottom === undefined || pg.capBottom) ? [pg.capBottom || 'bottom: [sketch] and [detail]'] : []),
+      ieHasRepo: !!pg.repo,
+      ieRepoLabel: pg.repoLabel || 'Source code:',
+      ieCapLinkLabel: pg.repo ? (pg.repoLabel || 'Source code:') : 'Live at',
+      ieHasRoleList: !!(pg.roleList && pg.roleList.length),
+      ieRoleList: pg.roleList || [],
+      ieHasRoleOutro: !!pg.roleOutro,
+      ieRoleOutro: pg.roleOutro || '',
+      stackGroups: pg.stackGroups || [],
+      ieGroupedStack: !!(pg.stackGroups && pg.stackGroups.length),
+      ieFlatStack: !(pg.stackGroups && pg.stackGroups.length),
+      ieHasGallery: !!(pg.gallery && pg.gallery.length),
+      ieGallery: pg.gallery || [],
+      ieShowInfobox: !(pg.gallery && pg.gallery.length),
+      ieShotsLeft: pg.shotsLeft || [],
+      ieShotsRight: pg.shotsRight || [],
+      ieHasRight: !!(pg.shotsRight && pg.shotsRight.length),
+      ieShotCols: pg.shotCols || '1fr',
+      ieHasProcess: pg.process === undefined ? true : !!pg.process,
+      ieHasCapBottom: pg.capBottom === undefined ? true : !!pg.capBottom,
+      ieCapTop: pg.capTop || 'top: [screen name] and [screen name]',
+      ieCapBottom: pg.capBottom || 'bottom: [sketch] and [detail]',
+      ieSlot1: this.state.ieProj + '-shot-1',
+      ieSlot2: this.state.ieProj + '-shot-2',
+      ieSlot3: this.state.ieProj + '-shot-3',
+      ieSlot4: this.state.ieProj + '-shot-4',
+      worldShadow: art.world,
+      ieTools: [
+        ['Back','\u2190',0],['Forward','\u2192',0],['Stop','\u2715',1],['Refresh','\u21BB',1],
+        ['Home','\u2302',1],['Search','\u26B2',1],['Favorites','\u2605',1],['History','\u25F4',1],['Print','\u2399',1]
+      ].map(t => ({
+        label: t[0], glyph: t[1],
+        color: t[2] ? '#5C1533' : '#D8A6C0',
+        opacity: t[2] ? 1 : 0.5,
+        disc: t[2] ? '#FFC9E1' : '#FFE9F3',
+        ring: t[2] ? '#A83C6E' : '#E9A9C8',
+        glyphColor: t[2] ? '#7A1F45' : '#D8A6C0'
+      })),
+      onIeDown: (e) => { e.stopPropagation(); this.winDrag = { which:'ie', dx: e.clientX - this.state.ieLeft, dy: e.clientY - this.state.ieTop }; this.setState({ startDown:false }); },
+      onIeMin: (e) => { e.stopPropagation(); this.setState({ ieMin:true }); },
+      onIeMax: (e) => { e.stopPropagation(); this.setState(s => ({ ieMax: !s.ieMax })); },
+      onIeClose: (e) => { e.stopPropagation(); this.setState({ ieOpen:false }); },
+      projOpen: this.state.projOpen,
+      projVis: this.state.projMin ? 'hidden' : 'visible',
+      projWidth: this.state.projMax ? (vw - 4) + 'px' : Math.round(Math.min(760, vw * 0.62)) + 'px',
+      projMaxW: this.state.projMax ? 'none' : '94vw',
+      projHeight: this.state.projMax ? (vh - 48) + 'px' : Math.max(300, Math.min(520, vh - 44 - this.projTopClamped() - 8)) + 'px',
+      projLeft: this.state.projMax ? '0px' : Math.max(6, Math.min(this.state.projLeft, vw - Math.min(760, vw * 0.62) - 6)) + 'px',
+      projTop: this.state.projMax ? '0px' : this.projTopClamped() + 'px',
+      onProjDown: (e) => { e.stopPropagation(); this.winDrag = { which:'proj', dx: e.clientX - this.state.projLeft, dy: e.clientY - this.state.projTop }; this.setState({ startDown:false }); },
+      onProjMin: (e) => { e.stopPropagation(); this.setState({ projMin:true }); },
+      onProjMax: (e) => { e.stopPropagation(); this.setState(s => ({ projMax: !s.projMax })); },
+      onProjClose: (e) => { e.stopPropagation(); this.setState({ projOpen:false }); },
+      folderOpen: this.state.folderOpen,
+      folderVis: this.state.folderMin ? 'hidden' : 'visible',
+      folderWidth: this.state.folderMax ? (vw - 4) + 'px' : Math.round(Math.min(700, vw * 0.56)) + 'px',
+      folderMaxW: this.state.folderMax ? 'none' : '94vw',
+      folderHeight: this.state.folderMax ? (vh - 48) + 'px' : Math.max(280, Math.min(330, vh - 44 - this.folderTopClamped() - 8)) + 'px',
+      folderLeft: this.state.folderMax ? '0px' : Math.max(6, Math.min(this.state.folderLeft, vw - Math.min(700, vw * 0.56) - 6)) + 'px',
+      folderTop: this.state.folderMax ? '0px' : this.folderTopClamped() + 'px',
+      onFolderMin: (e) => { e.stopPropagation(); this.setState({ folderMin:true }); },
+      onFolderMax: (e) => { e.stopPropagation(); this.setState(s => ({ folderMax: !s.folderMax })); },
+      folderIconShadow: art.folder,
+      folderHint: this.state.docSel ? (this.state.docSel === 'work' ? 'Work Experience \u2014 roles, dates, highlights.' : this.state.docSel === 'pdf' ? 'Jordan_Duncan_Resume \u2014 the official copy. Open to view, download, or print.' : 'Academic Experience \u2014 school, degree, coursework.') : 'Select an item to view its description.',
+      tools: [
+        ['Back','back',1],['Forward','fwd',0],['Up','up',1],
+        ['Cut','cut',1],['Copy','copy',1],['Paste','paste',0],
+        ['Undo','undo',1],['Delete','del',1],['Properties','prop',1],['Views','views',1]
+      ].map(t => ({
+        label: t[0],
+        shadow: this.toolShadows[t[1]],
+        color: t[2] ? '#5C1533' : '#D8A6C0',
+        opacity: t[2] ? 1 : 0.45
+      })),
+      docs: [
+        { id:'work', label:'Work Experience' },
+        { id:'edu', label:'Academic Experience' },
+        { id:'pdf', label:'OFFICIAL RESUME', art:'dl' }
+      ].map(d => ({
+        label: d.label,
+        shadow: d.art ? art[d.art] : art.doc,
+        bg: this.state.docSel === d.id ? 'rgba(209,78,134,.16)' : 'transparent',
+        labelBg: this.state.docSel === d.id ? '#D14E86' : 'transparent',
+        color: this.state.docSel === d.id ? '#FFF6FA' : '#5C1533',
+        onClick: (e) => { e.stopPropagation(); this.setState({ docSel:d.id }); },
+        onOpen: (e) => {
+          e.stopPropagation();
+          if (d.id === 'work') { this.setState({ docWinOpen:true, docWinMin:false }); setTimeout(() => this.syncScroll('doc'), 60); }
+          else if (d.id === 'edu') { this.setState({ eduWinOpen:true, eduWinMin:false }); setTimeout(() => this.syncScroll('edu'), 60); }
+          else if (d.id === 'pdf') this.setState({ resOpen:true, resMin:false });
+        }
+      })),
+      resOpen: this.state.resOpen,
+      resVis: this.state.resMin ? 'hidden' : 'visible',
+      resWidth: this.state.resMax ? (vw - 4) + 'px' : Math.min(980, vw - 80) + 'px',
+      resHeight: this.state.resMax ? (vh - 48) + 'px' : Math.min(680, vh - 44 - this.state.resTop - 8) + 'px',
+      resLeft: this.state.resMax ? '0px' : this.state.resLeft + 'px',
+      resTop: this.state.resMax ? '0px' : this.state.resTop + 'px',
+      resIconShadow: art.dl,
+      onResDown: (e) => { e.stopPropagation(); this.winDrag = { which:'res', dx: e.clientX - this.state.resLeft, dy: e.clientY - this.state.resTop }; this.setState({ startDown:false }); },
+      onResMin: (e) => { e.stopPropagation(); this.setState({ resMin:true }); },
+      onResMax: (e) => { e.stopPropagation(); this.setState(s => ({ resMax: !s.resMax })); },
+      onResClose: (e) => { e.stopPropagation(); this.setState({ resOpen:false }); },
+      onResPrint: (e) => { e.stopPropagation(); this.printResume(); },
+      docWinOpen: this.state.docWinOpen,
+      docWinVis: this.state.docWinMin ? 'hidden' : 'visible',
+      docWinWidth: this.state.docWinMax ? (vw - 4) + 'px' : Math.min(980, vw - 80) + 'px',
+      docWinHeight: this.state.docWinMax ? (vh - 48) + 'px' : Math.min(660, vh - 44 - this.state.docWinTop - 8) + 'px',
+      docWinLeft: this.state.docWinMax ? '0px' : this.state.docWinLeft + 'px',
+      docWinTop: this.state.docWinMax ? '0px' : this.state.docWinTop + 'px',
+      rulerMarks: [0,1,2,3,4,5,6,7,8].map(n => ({ n, left: 96 + n * 78 })),
+      docScrollRef: this.docScrollRef,
+      docTrackRef: this.docTrackRef,
+      docThumbTop: this.thumbGeom('doc').top + 'px',
+      docThumbHeight: this.thumbGeom('doc').thumbH + 'px',
+      onDocScroll: () => this.syncScroll('doc'),
+      onDocThumbDown: (e) => this.thumbDown('doc', e),
+      onDocTrackDown: (e) => this.trackDown('doc', e),
+      onDocScrollUp: (e) => { e.stopPropagation(); this.scrollByK('doc', -60); },
+      onDocScrollDown: (e) => { e.stopPropagation(); this.scrollByK('doc', 60); },
+      eduWinOpen: this.state.eduWinOpen,
+      eduWinVis: this.state.eduWinMin ? 'hidden' : 'visible',
+      eduWinWidth: this.state.eduWinMax ? (vw - 4) + 'px' : Math.min(980, vw - 80) + 'px',
+      eduWinHeight: this.state.eduWinMax ? (vh - 48) + 'px' : Math.min(660, vh - 44 - this.state.eduWinTop - 8) + 'px',
+      eduWinLeft: this.state.eduWinMax ? '0px' : this.state.eduWinLeft + 'px',
+      eduWinTop: this.state.eduWinMax ? '0px' : this.state.eduWinTop + 'px',
+      eduScrollRef: this.eduScrollRef,
+      eduTrackRef: this.eduTrackRef,
+      eduThumbTop: this.thumbGeom('edu').top + 'px',
+      eduThumbHeight: this.thumbGeom('edu').thumbH + 'px',
+      onEduScroll: () => this.syncScroll('edu'),
+      onEduThumbDown: (e) => this.thumbDown('edu', e),
+      onEduTrackDown: (e) => this.trackDown('edu', e),
+      onEduScrollUp: (e) => { e.stopPropagation(); this.scrollByK('edu', -60); },
+      onEduScrollDown: (e) => { e.stopPropagation(); this.scrollByK('edu', 60); },
+      onEduWinDown: (e) => { e.stopPropagation(); this.eduWinDown(e); },
+      onEduMin: (e) => { e.stopPropagation(); this.setState({ eduWinMin:true }); },
+      onEduMax: (e) => { e.stopPropagation(); this.setState(s => ({ eduWinMax: !s.eduWinMax })); },
+      onEduClose: (e) => { e.stopPropagation(); this.setState({ eduWinOpen:false }); },
+      wordTools: ['\u2751','\u25A4','\u25A3','\u21B6','\u21B7','\u2702','\u2261','\u2263','\u2315','\u2637'],
+      onDocWinDown: (e) => { e.stopPropagation(); this.docWinDown(e); },
+      onDocMin: (e) => { e.stopPropagation(); this.setState({ docWinMin:true }); },
+      onDocMax: (e) => { e.stopPropagation(); this.setState(s => ({ docWinMax: !s.docWinMax })); },
+      onDocClose: (e) => { e.stopPropagation(); this.setState({ docWinOpen:false }); },
+      onFolderDown: (e) => { e.stopPropagation(); this.folderDown(e); },
+      onFolderClose: (e) => { e.stopPropagation(); this.setState({ folderOpen:false }); },
+      dlgOpen: this.state.dlgOpen,
+      dlgTitle: this.state.dlgTitle,
+      dlgMsg: this.state.dlgMsg,
+      dlgIconShadow: art.bin,
+      onDlgDown: (e) => { e.stopPropagation(); },
+      onDlgClose: (e) => { e.stopPropagation(); this.setState({ dlgOpen:false }); },
+      onDesktopDown: () => this.setState({ sel: null })
+    };
+  }
+}
+
+</script>
+</body>
 </html>
