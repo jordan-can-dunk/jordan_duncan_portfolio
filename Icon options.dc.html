@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Pixelify+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; padding:0; background:#FFE9F3; }
+  * { box-sizing:border-box; }
+  a { color:#D14E86; }
+  a:hover { color:#7A1F45; }
+</style>
+</helmet>
+<div style="min-height:100vh;padding:40px;font-family:'Pixelify Sans',Tahoma,sans-serif;color:#5C1533;">
+  <div style="font-family:'Silkscreen',monospace;font-size:16px;letter-spacing:.04em;margin-bottom:6px;">about me icon</div>
+  <div style="font-size:16px;opacity:.7;margin-bottom:32px;">Shown big, then at real desktop size (64px). Tell me a letter.</div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:20px;">
+    <sc-for list="{{ items }}" as="it" hint-placeholder-count="4">
+      <div style="width:190px;display:flex;flex-direction:column;align-items:center;gap:14px;padding:18px 10px 14px;background:#FFF6FA;border-top:2px solid #FFFFFF;border-left:2px solid #FFFFFF;border-right:2px solid #D98BB4;border-bottom:2px solid #D98BB4;">
+        <div style="position:relative;width:112px;height:112px;">
+          <div style="width:7px;height:7px;box-shadow:{{ it.big }}"></div>
+        </div>
+        <div style="position:relative;width:64px;height:64px;">
+          <div style="width:4px;height:4px;box-shadow:{{ it.small }}"></div>
+        </div>
+        <div style="font-family:'Silkscreen',monospace;font-size:11px;text-align:center;line-height:1.6;">{{ it.label }}</div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PAL = { K:'#7A1F45', P:'#FF6FA5', L:'#FFC9E1', W:'#FFFFFF', D:'#D14E86', S:'#FFE2D1', H:'#B0447C' };
+
+function shadow(map, px) {
+  const out = [];
+  map.forEach((row, y) => {
+    for (let x = 0; x < row.length; x++) {
+      const c = PAL[row[x]];
+      if (c) out.push((x * px) + 'px ' + (y * px) + 'px 0 0 ' + c);
+    }
+  });
+  return out.join(',');
+}
+
+const OPTS = {
+  A: ["KKKKKKKKKKKKKKKK",
+      "KWWWWWWWWWWWWWWK",
+      "KWKKKKKKKKKKKKWK",
+      "KWKLLHHHHHHLLKWK",
+      "KWKLHHSSSSHHLKWK",
+      "KWKLHSKSSKSHLKWK",
+      "KWKLHSSSSSSHLKWK",
+      "KWKLHSSDDSSHLKWK",
+      "KWKLHHSSSSHHLKWK",
+      "KWKLLHPPPPHLLKWK",
+      "KWKLLPPPPPPPLKWK",
+      "KWKKKKKKKKKKKKWK",
+      "KWWWWWWWWWWWWWWK",
+      "KWWWWWWWWWWWWWWK",
+      "KWWWWWWWWWWWWWWK",
+      "KKKKKKKKKKKKKKKK"],
+  B: ["....KKKKKKKK....",
+      "..KKHHHHHHHHKK..",
+      ".KHHHHHHHHHHHHK.",
+      "KHHHHHHHHHHHHHHK",
+      "KHHHSSSSSSSSHHHK",
+      "KHHSSSSSSSSSSHHK",
+      "KHHSSKSSSSKSSHHK",
+      "KHHSSSSSSSSSSHHK",
+      "KHHSDSSSSSSDSHHK",
+      "KHHSSSSDDSSSSHHK",
+      "KHHHSSSSSSSSHHHK",
+      "KHHHHSSSSSSHHHHK",
+      ".KHHHHSSSSHHHHK.",
+      ".KHHHHHHHHHHHHK.",
+      "..KKHHHHHHHHKK..",
+      "....KKKKKKKK...."],
+  C: ["KKKKKKKKKKKKKKKK",
+      "KDDDDDDDDDDKWWKK",
+      "KKKKKKKKKKKKKKKK",
+      "KWWWWWWWWWWWWWWK",
+      "KWWWHHHHHHHHWWWK",
+      "KWWHHSSSSSSHHWWK",
+      "KWWHSKSSSSKSHWWK",
+      "KWWHSSSSSSSSHWWK",
+      "KWWHSDSDDSDSHWWK",
+      "KWWHHSSSSSSHHWWK",
+      "KWWWHPPPPPPHWWWK",
+      "KWWPPPPPPPPPPWWK",
+      "KWWPPPPPPPPPPWWK",
+      "KWWWWWWWWWWWWWWK",
+      "KKKKKKKKKKKKKKKK",
+      "................"],
+  D: ["....KKKKKKKK....",
+      "..KKHHHHHHHHKK..",
+      "..KHHHHHHHHHHK..",
+      ".KHHHHHHHHHHHHK.",
+      ".KHHSSSSSSSSHHK.",
+      ".KHHSKSSSSKSHHK.",
+      ".KHHSSSSSSSSHHK.",
+      ".KHHSDSSSSDSHHK.",
+      ".KHHSSKKKKSSHHK.",
+      ".KHHHSSSSSSHHHK.",
+      ".KHHHHSSSSHHHHK.",
+      ".KHHHHSSSSHHHHK.",
+      ".KHHHHPPPPHHHHK.",
+      ".KHHHPPPPPPHHHK.",
+      "KKHHPPPPPPPPHHKK",
+      "KKKKKKKKKKKKKKKK"]
+};
+
+const LABELS = {
+  A: 'A \u2014 polaroid frame',
+  B: 'B \u2014 close-up face',
+  C: 'C \u2014 about.exe window',
+  D: 'D \u2014 current bust'
+};
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      items: ['A','B','C','D'].map(k => ({
+        label: LABELS[k],
+        big: shadow(OPTS[k], 7),
+        small: shadow(OPTS[k], 4)
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>
