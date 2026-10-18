@@ -1,54 +1,82 @@
 # Jordan Duncan — Retro Desktop Portfolio
 
+**Live site:** https://jordan-duncan-portfolio.vercel.app/
+
 A personal portfolio built as a pink, retro Windows-style desktop. Visitors double-click icons to open draggable windows for my resume, projects, and a few things about me.
+
+## How I built this
+
+The concept and design are mine. I knew from the start that I wanted my portfolio to feel like a pink, retro Windows desktop with windows, folders, a media player, and stickers. I built it with AI tools:
+
+1. **Designed and coded with [Claude Design](https://claude.ai).** I described each screen, window, and interaction I had in mind and iterated with Claude Design until it matched what I'd pictured. Claude Design wrote all of the code.
+2. **Reviewed and cleaned up with [Claude Code](https://claude.com/claude-code).** I used Claude Code to check the exported app, remove unused files and drafts left behind by the export, organize the assets into a clear folder structure, and set up deployment on Vercel.
+
+My role was creative director and product owner: I came up with the idea, made the design decisions, wrote the content, and checked that the final result works and is maintainable.
 
 ## What's on the desktop
 
-- **About Me / My World**: who I am, plus my movies, music, inspirations, and trips
-- **Resume**: work experience, academic experience, and skills. The resume can be printed or downloaded as a `.docx`
-- **Projects**: one folder per project, with screenshots and links
-- **My Computer** and **Trash**, for the full desktop feel
+- **About Me**: who I am, plus my inspirations, favorite movies, and trips
+- **Music**: a Top 10 Songs player
+- **Movies**: a media player with my favorite films
+- **Resume**: work experience, academic experience, and skills. You can download the resume as a `.docx`
+- **Projects**: one window per project, with screenshots, write-ups, and links
 
 ## Featured projects
 
-| # | Project | Link |
-|---|---------|------|
-| 1 | KC Intern Map | [kc-intern-map.dimin.io](https://kc-intern-map.dimin.io/) |
-| 2 | Agent Fluffy Bunny | [agent-fluffy-bunny.vercel.app](https://agent-fluffy-bunny.vercel.app/) |
-| 3 | Bank Appointment Booking System | [GitHub repo](https://github.com/jordan-can-dunk/commerce-bank-appointment-creator) |
-| 4 | Barbie Hangman: Dress Up & Guess | [barbie-hangman.vercel.app](https://barbie-hangman.vercel.app/) |
-| 5 | Valentine Candy Battle | [valentine-candy-battle.vercel.app](https://valentine-candy-battle.vercel.app/) |
+| Project | Link |
+|---------|------|
+| KC Intern Map | [kc-intern-map.dimin.io](https://kc-intern-map.dimin.io/) |
+| Internal Ticket Filing & Search Tool | Shown on the desktop |
+| Capacitive Touch Museum Exhibit | Shown on the desktop |
+| Agent Fluffy Bunny | [agent-fluffy-bunny.vercel.app](https://agent-fluffy-bunny.vercel.app/) |
+| Bank Appointment Booking System | [GitHub repo](https://github.com/jordan-can-dunk/commerce-bank-appointment-creator) |
+| Grover: Walmart Shopping AI Agent | [GitHub repo](https://github.com/jordan-can-dunk/Grover-Walmart-Shopping-AI-Agent) |
+| Barbie Hangman: Dress Up & Guess | [barbie-hangman.vercel.app](https://barbie-hangman.vercel.app/) |
+| Valentine Candy Battle | [valentine-candy-battle.vercel.app](https://valentine-candy-battle.vercel.app/) |
 
 ## Project structure
 
 ```
-desktop/                      # Deployable site
-  index.html                  # Main portfolio desktop
-  support.js, image-slot.js   # Runtime scripts the page needs
-  *.png, *.docx               # Screenshots, wallpaper, resume
-pink-desktop-portfolio.html   # Single-file bundled version (all assets inlined)
-Desktop.dc.html               # Source design file
-Resume style *.dc.html        # Resume design variations
-insp/ stars/ stickers/ trips/ # Images used on the "About Me" pages
+.
+├── index.html                  # The entire desktop app (markup, styles, and logic)
+└── assets/
+    ├── vendor/
+    │   ├── support.js          # Component runtime (generated; do not edit)
+    │   └── image-slot.js       # <image-slot> web component
+    ├── documents/
+    │   └── Jordan_Duncan_Resume.docx
+    └── images/
+        ├── wallpaper.png
+        ├── about/              # Headshot, avatar, stars, stickers, inspirations, trips
+        ├── movies/             # Movie posters
+        └── projects/           # Screenshots, one folder per project
 ```
 
 ## Running locally
 
-Clone the repo and serve the `desktop/` folder with any static file server:
+This is a static site with no build step. Serve the repo root with any static file server:
 
 ```bash
 git clone https://github.com/jordan-can-dunk/jordan_duncan_portfolio.git
-cd jordan_duncan_portfolio/desktop
+cd jordan_duncan_portfolio
 python -m http.server 8000
 ```
 
 Then open http://localhost:8000.
 
-You can also just open `pink-desktop-portfolio.html` in a browser. It's fully self-contained.
+> Use a local server instead of opening `index.html` straight from disk, since the runtime and YouTube players expect to be served over HTTP.
+
+## Deployment
+
+The site is hosted on Vercel and deploys automatically on every push to `main`. The project uses the **Other** framework preset, no build command, and the repo root as the root directory.
 
 ## Built with
 
-Plain HTML, CSS, and JavaScript. No build step is needed. Fonts are Comic Neue, Silkscreen, and Pixelify Sans from Google Fonts.
+- [Claude Design](https://claude.ai) for design and code generation
+- [Claude Code](https://claude.com/claude-code) for code review, cleanup, and deployment setup
+- HTML, CSS, and JavaScript, rendered by a small React-based component runtime (`assets/vendor/support.js`)
+- Google Fonts: Comic Neue, Silkscreen, and Pixelify Sans
+- YouTube IFrame API for the music and movie players
 
 ## Contact
 

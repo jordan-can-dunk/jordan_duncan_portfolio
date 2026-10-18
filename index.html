@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Jordan Duncan | Portfolio</title>
+<meta name="description" content="Jordan Duncan's portfolio: projects, resume, and more, presented as a retro desktop.">
+<script src="./assets/vendor/support.js"></script>
 </head>
 <body>
 <x-dc>
@@ -37,11 +39,11 @@
     #resume-print li, #resume-print ul { break-inside:avoid; page-break-inside:avoid; }
   }
 </style>
-<script src="./image-slot.js"></script>
+<script src="./assets/vendor/image-slot.js"></script>
 </helmet>
 <div style="position:relative;width:100vw;height:100vh;overflow:hidden;font-family:Tahoma,'MS Sans Serif',Geneva,Verdana,sans-serif;cursor:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26'%3E%3Cpath d='M4 2 L4 19 L9 14 L12 22 L16 21 L13 13 L19 13 Z' fill='%23ffffff' stroke='%237A1F45' stroke-width='2.5' stroke-linejoin='miter'/%3E%3C/svg%3E&quot;) 3 2, auto;" onPointerDown="{{ onDesktopDown }}">
 
-  <div style="position:absolute;inset:0;background:#FF96C4 url('./wallpaper-pink-v3.png') center/cover no-repeat;"></div>
+  <div style="position:absolute;inset:0;background:#FF96C4 url('./assets/images/wallpaper.png') center/cover no-repeat;"></div>
 
   <sc-for list="{{ icons }}" as="ic" hint-placeholder-count="7">
     <div style="position:absolute;width:78px;padding:4px 2px 3px;display:flex;flex-direction:column;align-items:center;gap:4px;user-select:none;touch-action:none;left:{{ ic.left }}px;top:{{ ic.top }}px;background:{{ ic.cellBg }};outline:{{ ic.cellOutline }};z-index:{{ ic.z }}" onPointerDown="{{ ic.onPointerDown }}" onDoubleClick="{{ ic.onDoubleClick }}">
@@ -620,21 +622,21 @@
         <span>Address</span>
         <div style="flex:1;min-width:0;padding:2px 6px;background:#FFF;border-top:1px solid #A83C6E;border-left:1px solid #A83C6E;border-right:1px solid #FFF6FA;border-bottom:1px solid #FFF6FA;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">http://www.jordanspace.com/jordan</div>
       </div>
-      <div class="om-pinkscroll" style="flex:1;min-height:0;overflow-x:hidden;overflow-y:auto;background:#5C0033 url('./aboutme-stars.png') repeat;background-size:402px auto;">
+      <div class="om-pinkscroll" style="flex:1;min-height:0;overflow-x:hidden;overflow-y:auto;background:#5C0033 url('./assets/images/about/stars-banner.png') repeat;background-size:402px auto;">
         <div style="position:relative;max-width:1080px;margin:0 auto;padding:14px 48px 30px;display:flex;flex-direction:column;gap:14px;box-sizing:border-box;">
           <div style="position:absolute;inset:0;pointer-events:none;z-index:3;">
-            <img src="./stars/star-05.png" alt="" style="position:absolute;left:-6px;top:6px;width:53px;height:auto;transform:rotate(-14deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-02.png" alt="" style="position:absolute;right:-6px;top:70px;width:46px;height:auto;transform:rotate(16deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-13.png" alt="" style="position:absolute;left:-6px;top:230px;width:58px;height:auto;transform:rotate(-6deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-09.png" alt="" style="position:absolute;right:-6px;top:330px;width:56px;height:auto;transform:rotate(10deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-18.png" alt="" style="position:absolute;left:-6px;top:520px;width:50px;height:auto;transform:rotate(18deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-15.png" alt="" style="position:absolute;right:-6px;top:640px;width:58px;height:auto;transform:rotate(-12deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-08.png" alt="" style="position:absolute;left:-6px;top:820px;width:48px;height:auto;transform:rotate(8deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-14.png" alt="" style="position:absolute;right:-6px;top:960px;width:58px;height:auto;transform:rotate(20deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-11.png" alt="" style="position:absolute;left:-6px;top:1120px;width:52px;height:auto;transform:rotate(-18deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-17.png" alt="" style="position:absolute;right:-6px;top:1270px;width:55px;height:auto;transform:rotate(-4deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-04.png" alt="" style="position:absolute;left:-6px;top:1430px;width:46px;height:auto;transform:rotate(12deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-12.png" alt="" style="position:absolute;right:-6px;top:1580px;width:50px;height:auto;transform:rotate(-16deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-05.png" alt="" style="position:absolute;left:-6px;top:6px;width:53px;height:auto;transform:rotate(-14deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-02.png" alt="" style="position:absolute;right:-6px;top:70px;width:46px;height:auto;transform:rotate(16deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-13.png" alt="" style="position:absolute;left:-6px;top:230px;width:58px;height:auto;transform:rotate(-6deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-09.png" alt="" style="position:absolute;right:-6px;top:330px;width:56px;height:auto;transform:rotate(10deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-18.png" alt="" style="position:absolute;left:-6px;top:520px;width:50px;height:auto;transform:rotate(18deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-15.png" alt="" style="position:absolute;right:-6px;top:640px;width:58px;height:auto;transform:rotate(-12deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-08.png" alt="" style="position:absolute;left:-6px;top:820px;width:48px;height:auto;transform:rotate(8deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-14.png" alt="" style="position:absolute;right:-6px;top:960px;width:58px;height:auto;transform:rotate(20deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-11.png" alt="" style="position:absolute;left:-6px;top:1120px;width:52px;height:auto;transform:rotate(-18deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-17.png" alt="" style="position:absolute;right:-6px;top:1270px;width:55px;height:auto;transform:rotate(-4deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-04.png" alt="" style="position:absolute;left:-6px;top:1430px;width:46px;height:auto;transform:rotate(12deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-12.png" alt="" style="position:absolute;right:-6px;top:1580px;width:50px;height:auto;transform:rotate(-16deg);filter:drop-shadow(2px 3px 0 rgba(30,0,16,.55));" />
           </div>
           <div style="display:flex;flex-direction:column;border:2px solid #FF3EA5;box-shadow:0 0 0 1px #000;">
             <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:8px 12px;background:linear-gradient(180deg,#FFE3F0,#FFB8DA);">
@@ -650,19 +652,19 @@
             </div>
           </div>
           <div style="position:relative;display:flex;align-items:center;justify-content:center;gap:12px;">
-            <img src="./stars/star-07.png" alt="" style="width:40px;height:auto;transform:rotate(-14deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-01.png" alt="" style="width:30px;height:auto;transform:rotate(10deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-07.png" alt="" style="width:40px;height:auto;transform:rotate(-14deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-01.png" alt="" style="width:30px;height:auto;transform:rotate(10deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
             <div style="text-align:center;font-family:'Orbitron',monospace;font-size:34px;font-weight:900;letter-spacing:3px;color:#FFFFFF;text-shadow:3px 3px 0 #E0168A,0 0 16px #FF3EA5;">✧ welcome 2 my page ✧</div>
-            <img src="./stars/star-10.png" alt="" style="width:30px;height:auto;transform:rotate(-8deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
-            <img src="./stars/star-06.png" alt="" style="width:40px;height:auto;transform:rotate(16deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-10.png" alt="" style="width:30px;height:auto;transform:rotate(-8deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
+            <img src="./assets/images/about/stars/star-06.png" alt="" style="width:40px;height:auto;transform:rotate(16deg);filter:drop-shadow(2px 2px 0 rgba(30,0,16,.55));" />
           </div>
           <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;">
           <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:14px;">
             <div style="position:relative;background:rgba(12,0,8,.86);border:2px solid #FF3EA5;box-shadow:0 0 0 1px #000,0 0 14px rgba(255,62,165,.45);padding:10px 12px 12px;display:flex;flex-direction:column;gap:8px;">
-              <img src="./sticker-lawyer-cat.png" alt="Sticker of a kitten in a suit with a briefcase" style="position:absolute;right:10px;bottom:8px;width:64px;height:auto;z-index:2;transform:rotate(8deg);pointer-events:none;filter:drop-shadow(2px 4px 3px rgba(0,0,0,.6));" />
+              <img src="./assets/images/about/stickers/lawyer-cat.png" alt="Sticker of a kitten in a suit with a briefcase" style="position:absolute;right:10px;bottom:8px;width:64px;height:auto;z-index:2;transform:rotate(8deg);pointer-events:none;filter:drop-shadow(2px 4px 3px rgba(0,0,0,.6));" />
               <div style="font-family:'Pixelify Sans',sans-serif;font-size:26px;font-weight:700;line-height:1;color:#FFFFFF;text-shadow:2px 2px 0 #E0168A;">Jordan Duncan</div>
               <div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:12px;align-items:start;">
-                <img src="./aboutme-headshot-2.jpg" alt="Jordan Duncan" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 0%;border:2px solid #FF9CD0;box-shadow:3px 3px 0 #E0168A;" />
+                <img src="./assets/images/about/headshot.jpg" alt="Jordan Duncan" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 0%;border:2px solid #FF9CD0;box-shadow:3px 3px 0 #E0168A;" />
                 <div style="font-family:Verdana,Tahoma,sans-serif;font-size:11px;line-height:1.55;color:#FFE3F0;display:flex;flex-direction:column;gap:2px;">
                   <span style="font-family:'Comic Neue',cursive;font-size:13px;font-weight:700;color:#FF8CC6;margin-bottom:4px;">{{ amHeadline }}</span>
                   <span>CS + Cybersecurity @ UCM</span>
@@ -710,7 +712,7 @@
               </div>
             </div>
                       <div style="flex:0 0 auto;display:flex;justify-content:center;">
-              <img src="./aboutme-bratz-2.png" alt="Jordan as a Bratz doll coding at a desk" style="display:block;width:auto;max-width:100%;height:340px;object-fit:contain;filter:drop-shadow(4px 6px 0 rgba(30,0,16,.55)) drop-shadow(0 0 14px rgba(255,62,165,.35));" />
+              <img src="./assets/images/about/bratz-avatar.png" alt="Jordan as a Bratz doll coding at a desk" style="display:block;width:auto;max-width:100%;height:340px;object-fit:contain;filter:drop-shadow(4px 6px 0 rgba(30,0,16,.55)) drop-shadow(0 0 14px rgba(255,62,165,.35));" />
             </div>
             <div style="background:rgba(12,0,8,.86);border:2px solid #FF3EA5;box-shadow:0 0 0 1px #000,0 0 14px rgba(255,62,165,.45);display:flex;flex-direction:column;">
               <div style="padding:4px 8px;background:linear-gradient(180deg,#FF5DB1,#E0168A);border-bottom:2px solid #FF9CD0;font-family:'Silkscreen',monospace;font-size:13px;color:#FFFFFF;text-shadow:1px 1px 0 #5C0033;">Jordan's Inspirations</div>
@@ -727,14 +729,14 @@
               </div>
             </div>
             <div style="position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px;padding:10px 8px 16px;">
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./sticker-kitty-fire.png" alt="Hello Kitty at an office desk next to a burning laptop" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-5deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./stickers/spongebob.png" alt="SpongeBob smiling at his desk while panicking inside" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(4deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./stickers/sims.png" alt="A Sim playing on the computer at her desk" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-3deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./stickers/papa.png" alt="Papa Louie character with the caption all i really want is swag and money" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(5deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./stickers/minions.png" alt="Perler bead minions with their overalls hung on a clothesline" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-4deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
-              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./stickers/dwight-cut.png" alt="Dwight Schrute meditating" style="display:block;width:118%;max-width:none;height:auto;transform:rotate(3deg);filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" /></div>
-              <img src="./sticker-squidward.png" alt="Squidward sitting in a cardboard box holding a mug" style="position:absolute;left:27%;top:36%;width:22%;height:auto;z-index:2;transform:rotate(-6deg);pointer-events:none;filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" />
-              <img src="./stickers/fleabag-cut.png" alt="Fleabag grimacing while holding a drink" style="position:absolute;left:56%;top:-4%;width:20%;height:auto;z-index:2;transform:rotate(7deg);pointer-events:none;filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" />
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/kitty-fire.png" alt="Hello Kitty at an office desk next to a burning laptop" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-5deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/spongebob.png" alt="SpongeBob smiling at his desk while panicking inside" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(4deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/sims.png" alt="A Sim playing on the computer at her desk" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-3deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/papa.png" alt="Papa Louie character with the caption all i really want is swag and money" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(5deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/minions.png" alt="Perler bead minions with their overalls hung on a clothesline" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;transform:rotate(-4deg);box-shadow:3px 5px 6px rgba(0,0,0,.55);" /></div>
+              <div style="display:flex;align-items:center;justify-content:center;min-width:0;"><img src="./assets/images/about/stickers/dwight-cut.png" alt="Dwight Schrute meditating" style="display:block;width:118%;max-width:none;height:auto;transform:rotate(3deg);filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" /></div>
+              <img src="./assets/images/about/stickers/squidward.png" alt="Squidward sitting in a cardboard box holding a mug" style="position:absolute;left:27%;top:36%;width:22%;height:auto;z-index:2;transform:rotate(-6deg);pointer-events:none;filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" />
+              <img src="./assets/images/about/stickers/fleabag-cut.png" alt="Fleabag grimacing while holding a drink" style="position:absolute;left:56%;top:-4%;width:20%;height:auto;z-index:2;transform:rotate(7deg);pointer-events:none;filter:drop-shadow(3px 5px 4px rgba(0,0,0,.6));" />
             </div>
           </div>
           <div style="flex:1.35 1 400px;min-width:0;display:flex;flex-direction:column;gap:14px;">
@@ -1467,7 +1469,7 @@
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;padding:6px 8px;background:#FFDFEE;border-bottom:1px solid #F0B6D2;">
-        <a href="./Jordan_Duncan_Resume.docx" download="Jordan_Duncan_Resume.docx" style="display:flex;align-items:center;gap:7px;padding:4px 12px;text-decoration:none;background:#FFC0DC;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#5C1533;" style-active="background:#FFA9CE">
+        <a href="./assets/documents/Jordan_Duncan_Resume.docx" download="Jordan_Duncan_Resume.docx" style="display:flex;align-items:center;gap:7px;padding:4px 12px;text-decoration:none;background:#FFC0DC;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#5C1533;" style-active="background:#FFA9CE">
           <span style="font-size:13px;line-height:1;">⤓</span>Download
         </a>
         <div style="display:flex;align-items:center;gap:7px;padding:4px 12px;background:#FFC0DC;border-top:2px solid #FFF6FA;border-left:2px solid #FFF6FA;border-right:2px solid #A83C6E;border-bottom:2px solid #A83C6E;font-family:Tahoma,sans-serif;font-size:12px;font-weight:700;color:#5C1533;" style-active="background:#FFA9CE" onClick="{{ onResPrint }}">
@@ -2093,16 +2095,16 @@ class Component extends DCLogic {
       pptOpen:false, pptMin:false, pptMax:false, pptLeft:120, pptTop:30, pptSlide:0,
       discOpen:false, discMin:false, discMax:false, discId:'c1', discLeft:180, discTop:60, discTab:'home', discPct:0 };
     this.movies = [
-      { title:'Fleabag', poster:'./mov-fleabag.png' },
-      { title:'Everything Everywhere All at Once', poster:'./mov-eeaao.png' },
-      { title:'Soul', poster:'./mov-soul.png' },
-      { title:'The Sound of Music', poster:'./mov-soundofmusic.png' },
-      { title:'Elvis', poster:'./mov-elvis.png' },
-      { title:'The Princess Bride', poster:'./mov-princessbride.png' },
-      { title:'Harry Potter and the Prisoner of Azkaban', poster:'./mov-hp-azkaban.png' },
-      { title:'The Matrix', poster:'./mov-matrix.png' },
-      { title:'Project Hail Mary', poster:'./mov-hailmary.png' },
-      { title:'Oppenheimer', poster:'./mov-oppenheimer.png' }
+      { title:'Fleabag', poster:'./assets/images/movies/fleabag.png' },
+      { title:'Everything Everywhere All at Once', poster:'./assets/images/movies/everything-everywhere.png' },
+      { title:'Soul', poster:'./assets/images/movies/soul.png' },
+      { title:'The Sound of Music', poster:'./assets/images/movies/the-sound-of-music.png' },
+      { title:'Elvis', poster:'./assets/images/movies/elvis.png' },
+      { title:'The Princess Bride', poster:'./assets/images/movies/the-princess-bride.png' },
+      { title:'Harry Potter and the Prisoner of Azkaban', poster:'./assets/images/movies/prisoner-of-azkaban.png' },
+      { title:'The Matrix', poster:'./assets/images/movies/the-matrix.png' },
+      { title:'Project Hail Mary', poster:'./assets/images/movies/project-hail-mary.png' },
+      { title:'Oppenheimer', poster:'./assets/images/movies/oppenheimer.png' }
     ];
     this.songs = [
       { yt:'IDX7QYjHAQw', artist:'Mitski', title:'Geyser' },
@@ -2237,9 +2239,9 @@ class Component extends DCLogic {
               'This project taught me how to move fast through unfamiliar technology without cutting corners, how to debug real production issues under real constraints, and how satisfying it is to hand off something a whole department relies on daily.',
             specs:['Django','Django Admin','Django REST Framework','PostgreSQL','Docker','Application Programming Interfaces (API)','Python (Programming Language)','Query Optimization','Debugging','Database Management System (DBMS)'],
             shots:[
-              {src:'./di-recaps.png',alt:'Recaps search and filter \u2014 filter by date, employee, service type, client, and job code, then search', span:'1 / -1'},
-              {src:'./di-add-recap.png',alt:'Add New Recap form \u2014 add a new client, job code, employee, association, and recap ticket description from this page', span:'auto'},
-              {src:'./di-clients.png',alt:'Example of tab pages \u2014 click into the name, job codes, and recaps to go to that entry', span:'auto'}
+              {src:'./assets/images/projects/ticket-tool/recaps.png',alt:'Recaps search and filter \u2014 filter by date, employee, service type, client, and job code, then search', span:'1 / -1'},
+              {src:'./assets/images/projects/ticket-tool/add-recap.png',alt:'Add New Recap form \u2014 add a new client, job code, employee, association, and recap ticket description from this page', span:'auto'},
+              {src:'./assets/images/projects/ticket-tool/clients.png',alt:'Example of tab pages \u2014 click into the name, job codes, and recaps to go to that entry', span:'auto'}
             ] },
       c2: { task:'Project 3', drive:'Project 3 (E:)', edition:'VUE \u00b7 ELECTRON \u00b7 PHIDGETS', version:'1.0', title:'Capacitive Touch Museum Exhibit', url:'',
             readme:'CAPACITIVE TOUCH PHIDGETS HARDWARE + SOFTWARE MUSEUM EXHIBIT (VUE, ELECTRON, PHIDGETS)\n=====================================================================================\n\n' +
@@ -2249,10 +2251,10 @@ class Component extends DCLogic {
               'This project is a permanent installation that will carry the company\u2019s name, and it taught me that with enough patience and curiosity, I can learn to work confidently in any domains, even physical hardware, that I had zero prior experience with.',
             specs:['Computer Hardware','Vue.js','TypeScript','Electron.js','Pinia','Tailwind CSS'],
             shots:[
-              {src:'./tree-drawing.jpg',alt:'Design drawings \u2014 interactive surface top view, tree stump, and projector side view', span:'1 / -1'},
-              {src:'./tree-demo.png',alt:'Prototype test \u2014 touching a ring triggers its matching video and lights the ring', span:'1 / -1'},
-              {src:'./tree-proto1.jpeg',alt:'First prototype \u2014 touch rings wired to Phidget sensors and a solid-state relay', span:'auto'},
-              {src:'./tree-phase2.jpeg',alt:'Second-phase prototype \u2014 aluminum touch rings with LED back illumination', span:'auto'}
+              {src:'./assets/images/projects/museum-exhibit/drawing.jpg',alt:'Design drawings \u2014 interactive surface top view, tree stump, and projector side view', span:'1 / -1'},
+              {src:'./assets/images/projects/museum-exhibit/demo.png',alt:'Prototype test \u2014 touching a ring triggers its matching video and lights the ring', span:'1 / -1'},
+              {src:'./assets/images/projects/museum-exhibit/prototype-1.jpg',alt:'First prototype \u2014 touch rings wired to Phidget sensors and a solid-state relay', span:'auto'},
+              {src:'./assets/images/projects/museum-exhibit/prototype-2.jpg',alt:'Second-phase prototype \u2014 aluminum touch rings with LED back illumination', span:'auto'}
             ],
             shotsNote:'Built at Dimensional Innovations during my summer software engineering internship. I didn\u2019t create the design drawings or the second-phase prototype; they\u2019re included to show the full progression of the project.' },
       c3: { task:'Research Project 1', drive:'Research Project 1 (F:)', edition:'CD-ROM EDITION', version:'1.0', title:'[Project Title]', url:'',
@@ -2262,8 +2264,8 @@ class Component extends DCLogic {
     this.pages = {
       p1: { title:'KC Intern Map', url:'https://kc-intern-map.dimin.io/', task:'Project 1', status:'KC Intern Map',
             stack:['Vue 3','Vite','Vue Router','Leaflet','GSAP 3 + ScrollTrigger','Lenis','Django','PostgreSQL','Docker','Heroku'],
-            shotsLeft:[{src:'./kcim-home.png',alt:'KC Intern Map homepage'},{src:'./kcim-map.png',alt:'KC Intern Map interactive map'}],
-            shotsRight:[{src:'./kcim-detail.png',alt:'KC Intern Map place-detail page'}],
+            shotsLeft:[{src:'./assets/images/projects/kc-intern-map/home.png',alt:'KC Intern Map homepage'},{src:'./assets/images/projects/kc-intern-map/map.png',alt:'KC Intern Map interactive map'}],
+            shotsRight:[{src:'./assets/images/projects/kc-intern-map/detail.png',alt:'KC Intern Map place-detail page'}],
             shotCols:'1.45fr 1fr',
             capTop:'left: homepage and the interactive map',
             capBottom:'right: place-detail page',
@@ -2274,7 +2276,7 @@ class Component extends DCLogic {
             process:'Work moved through three branches, each a full pass over the app. The manual build established the data model, the map interaction, and the pin flow by hand. The first AI-assisted pass rebuilt the interface from a single prompt, which produced something coherent but generic and hard to steer. The refined pass replaced that with a real workflow: research-driven prompts, official design plugins, and an approved design-token system agreed on before any screen was built. Screens were then generated one at a time \u2014 each one tested in the browser, reviewed against the tokens, and revised with feedback before moving on to the next.' },
       p2: { title:'Agent Fluffy Bunny', url:'https://agent-fluffy-bunny.vercel.app/', task:'Project 4', status:'Agent Fluffy Bunny',
             stack:['React 19','Vite','Tailwind CSS v4','Express','OpenAI API','Web Speech API'],
-            shotsLeft:[{src:'./afb-select.png',alt:'Agent Fluffy Bunny character selection'},{src:'./afb-chat.png',alt:'Agent Fluffy Bunny chat interface'}],
+            shotsLeft:[{src:'./assets/images/projects/agent-fluffy-bunny/select.png',alt:'Agent Fluffy Bunny character selection'},{src:'./assets/images/projects/agent-fluffy-bunny/chat.png',alt:'Agent Fluffy Bunny chat interface'}],
             shotsRight:[], shotCols:'1fr',
             capTop:'top: character selection',
             capBottom:'bottom: the chat interface',
@@ -2291,12 +2293,12 @@ class Component extends DCLogic {
               { title:'Tools', items:['Postman','MySQL Workbench','MySQL CLI','Git + GitHub','Gradle'] }
             ],
             gallery:[
-              {src:'./bank-welcome.png',alt:'Welcome page \u2014 booking entry point and the three-step overview'},
-              {src:'./bank-datetime.png',alt:'Step 3 of 5 \u2014 choosing a date and an available 30-minute slot'},
-              {src:'./bank-confirm.png',alt:'Step 5 of 5 \u2014 reviewing topic, branch, time, and contact before reserving'},
-              {src:'./bank-confirmed.png',alt:'Appointment confirmed \u2014 reserved slot, appointment number, and details'},
-              {src:'./bank-signup.png',alt:'Sign-up page \u2014 creating an online banking profile'},
-              {src:'./bank-dashboard.png',alt:'Account dashboard \u2014 upcoming and previous appointments with reschedule and cancel'}
+              {src:'./assets/images/projects/bank-appointments/welcome.png',alt:'Welcome page \u2014 booking entry point and the three-step overview'},
+              {src:'./assets/images/projects/bank-appointments/datetime.png',alt:'Step 3 of 5 \u2014 choosing a date and an available 30-minute slot'},
+              {src:'./assets/images/projects/bank-appointments/confirm.png',alt:'Step 5 of 5 \u2014 reviewing topic, branch, time, and contact before reserving'},
+              {src:'./assets/images/projects/bank-appointments/confirmed.png',alt:'Appointment confirmed \u2014 reserved slot, appointment number, and details'},
+              {src:'./assets/images/projects/bank-appointments/signup.png',alt:'Sign-up page \u2014 creating an online banking profile'},
+              {src:'./assets/images/projects/bank-appointments/dashboard.png',alt:'Account dashboard \u2014 upcoming and previous appointments with reschedule and cancel'}
             ],
             process:'',
             p1:'This is a full-stack web application that allows customers to schedule appointments with representatives at a Commerce Bank branch, built with a team in my software development class for Commerce Bank. Users select a reason for their visit, choose a branch that supports that service, pick an available 30-minute time slot, and confirm their booking. Once scheduled, the system reserves the time slot and prevents double booking.',
@@ -2315,10 +2317,10 @@ class Component extends DCLogic {
             task:'Project 7', status:'Barbie Hangman', lead:'Barbie Hangman',
             stack:['React 19','Vite','JavaScript (ES6+)','Vanilla CSS','Antigravity','ChatGPT'],
             shotsLeft:[
-              {src:'./barbie-choose.png',alt:'Choose My Barbie screen'},
-              {src:'./barbie-play.png',alt:'Barbie Hangman mid-game'}
+              {src:'./assets/images/projects/barbie-hangman/choose.png',alt:'Choose My Barbie screen'},
+              {src:'./assets/images/projects/barbie-hangman/play.png',alt:'Barbie Hangman mid-game'}
             ],
-            shotsRight:[{src:'./barbie-won.png',alt:'Winning screen'}],
+            shotsRight:[{src:'./assets/images/projects/barbie-hangman/won.png',alt:'Winning screen'}],
             shotCols:'1fr 1fr',
             capTop:'left: choosing and naming your Barbie, then playing',
             capBottom:'right: winning \u2014 Barbie steps out of the box',
@@ -2339,10 +2341,10 @@ class Component extends DCLogic {
             task:'Project 8', status:'Valentine Candy Battle',
             stack:['React','Vite','JavaScript','CSS','ChatGPT'],
             shotsLeft:[
-              {src:'./vcb-battle.png',alt:'Candy battle card matchup'},
-              {src:'./vcb-results.png',alt:'Final round results'}
+              {src:'./assets/images/projects/valentine-candy-battle/battle.png',alt:'Candy battle card matchup'},
+              {src:'./assets/images/projects/valentine-candy-battle/results.png',alt:'Final round results'}
             ],
-            shotsRight:[{src:'./vcb-surprise.png',alt:'Valentine surprise screen'}],
+            shotsRight:[{src:'./assets/images/projects/valentine-candy-battle/surprise.png',alt:'Valentine surprise screen'}],
             shotCols:'1.45fr 1fr',
             caps:['left: the candy battle card and the final round results','right: the Valentine surprise screen'],
             role:'', process:'',
@@ -2522,11 +2524,11 @@ class Component extends DCLogic {
       return img;
     });
     const tripSrcs = [
-      ...[1,2,3,4,5,6].map(n => './trips/rome-' + n + '.png'),
-      ...[1,2,3].map(n => './trips/sperlonga-' + n + '.png'),
-      './trips/pompeii-1.png', './trips/chicago-1.png', './trips/texas-1.png',
-      ...[1,2,3,4].map(n => './trips/florida-' + n + '.png'),
-      ...[1,2,3,4,5,6,7,8,9,10].map(n => './trips/kc-' + n + '.png')
+      ...[1,2,3,4,5,6].map(n => './assets/images/about/trips/rome-' + n + '.png'),
+      ...[1,2,3].map(n => './assets/images/about/trips/sperlonga-' + n + '.png'),
+      './assets/images/about/trips/pompeii-1.png', './assets/images/about/trips/chicago-1.png', './assets/images/about/trips/texas-1.png',
+      ...[1,2,3,4].map(n => './assets/images/about/trips/florida-' + n + '.png'),
+      ...[1,2,3,4,5,6,7,8,9,10].map(n => './assets/images/about/trips/kc-' + n + '.png')
     ];
     this.tripCache = tripSrcs.map(src => {
       const img = new Image();
@@ -3188,13 +3190,13 @@ class Component extends DCLogic {
             { q:'If you\u2019re not astonished by it, then you haven\u2019t understood it.', by:'Niels Bohr' }
           ],
           amTop8: [
-            { name:'Megamind', img:'./insp/megamind.png', pos:'50% 30%' },
-            { name:'Lego Batman', img:'./insp/lego-batman.png', pos:'50% 35%' },
-            { name:'Ryan Gosling', img:'./insp/ryan-gosling.png', pos:'50% 30%' },
-            { name:'Hermione Granger', img:'./insp/hermione.png', pos:'50% 25%' },
-            { name:'Elvis', img:'./insp/elvis.png', pos:'55% 25%' },
-            { name:'Dr. K (Alok Kanojia)', img:'./insp/dr-k.png', pos:'50% 40%' },
-            { name:'Neo', img:'./insp/neo.png', pos:'50% 30%' },
+            { name:'Megamind', img:'./assets/images/about/inspirations/megamind.png', pos:'50% 30%' },
+            { name:'Lego Batman', img:'./assets/images/about/inspirations/lego-batman.png', pos:'50% 35%' },
+            { name:'Ryan Gosling', img:'./assets/images/about/inspirations/ryan-gosling.png', pos:'50% 30%' },
+            { name:'Hermione Granger', img:'./assets/images/about/inspirations/hermione.png', pos:'50% 25%' },
+            { name:'Elvis', img:'./assets/images/about/inspirations/elvis.png', pos:'55% 25%' },
+            { name:'Dr. K (Alok Kanojia)', img:'./assets/images/about/inspirations/dr-k.png', pos:'50% 40%' },
+            { name:'Neo', img:'./assets/images/about/inspirations/neo.png', pos:'50% 30%' },
             { name:'my family & partner, ig', img:'' }
           ].map(p => ({ ...p, hasImg: !!p.img, noImg: !p.img })),
           amTrips: [
@@ -3202,11 +3204,11 @@ class Component extends DCLogic {
             ['Chicago, Illinois','2deg'], ['Houston, Texas','-2deg'], ['St. Pete Beach, Florida','-1.5deg'], ['Kansas City (lived here :)','1deg']
           ].map(([place, tilt], k) => {
             const photos = ({
-              0: [1,2,3,4,5,6].map(n => './trips/rome-' + n + '.png'),
-              1: [1,2,3].map(n => './trips/sperlonga-' + n + '.png'),
-              2: ['./trips/pompeii-1.png'], 3: ['./trips/chicago-1.png'], 4: ['./trips/texas-1.png'],
-              5: [1,2,3,4].map(n => './trips/florida-' + n + '.png'),
-              6: [1,2,3,4,5,6,7,8,9,10].map(n => './trips/kc-' + n + '.png')
+              0: [1,2,3,4,5,6].map(n => './assets/images/about/trips/rome-' + n + '.png'),
+              1: [1,2,3].map(n => './assets/images/about/trips/sperlonga-' + n + '.png'),
+              2: ['./assets/images/about/trips/pompeii-1.png'], 3: ['./assets/images/about/trips/chicago-1.png'], 4: ['./assets/images/about/trips/texas-1.png'],
+              5: [1,2,3,4].map(n => './assets/images/about/trips/florida-' + n + '.png'),
+              6: [1,2,3,4,5,6,7,8,9,10].map(n => './assets/images/about/trips/kc-' + n + '.png')
             })[k] || [];
             const at = ((this.state.tripIdx || {})[k] || 0) % (photos.length || 1);
             return {
