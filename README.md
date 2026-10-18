@@ -8,31 +8,17 @@ A personal portfolio built as a pink, retro Windows-style desktop. Visitors doub
 
 I created my portfolio to feel like a pink, retro Windows desktop with windows, folders, a media player, and stickers because I wanted a more interactive, personal resume. I built it with AI tools:
 
-1. **Designed and coded with [Claude Design](https://claude.ai).** I described each screen, window, and interaction I had in mind to Claude Design. I used prompt engineering and pintrest reference pictures iterated with Claude Design until it matched what I'd pictured. Claude Design wrote all of the code.
+1. **Designed and coded with [Claude Design](https://claude.ai).** I described each screen, window, and interaction I had in mind to Claude Design. I used prompt engineering and pintrest reference pictures to describe what I wanted and I iterated with Claude Design until it matched what I'd pictured. 
 2. **Reviewed and cleaned up with [Claude Code](https://claude.com/claude-code).** I used Claude Code to check the exported app, remove unused files and drafts left behind by the export, organize the assets into a clear folder structure, and set up deployment on Vercel.
 
-My role was creative director and product owner: I came up with the idea, made the design decisions, wrote the content, and checked that the final result works and is maintainable.
 
 ## What's on the desktop
 
-- **About Me**: who I am, plus my inspirations, favorite movies, and trips
-- **Music**: a Top 10 Songs player
-- **Movies**: a media player with my favorite films
-- **Resume**: work experience, academic experience, and skills. You can download the resume as a `.docx`
-- **Projects**: one window per project, with screenshots, write-ups, and links
-
-## Featured projects
-
-| Project | Link |
-|---------|------|
-| KC Intern Map | [kc-intern-map.dimin.io](https://kc-intern-map.dimin.io/) |
-| Internal Ticket Filing & Search Tool | Shown on the desktop |
-| Capacitive Touch Museum Exhibit | Shown on the desktop |
-| Agent Fluffy Bunny | [agent-fluffy-bunny.vercel.app](https://agent-fluffy-bunny.vercel.app/) |
-| Bank Appointment Booking System | [GitHub repo](https://github.com/jordan-can-dunk/commerce-bank-appointment-creator) |
-| Grover: Walmart Shopping AI Agent | [GitHub repo](https://github.com/jordan-can-dunk/Grover-Walmart-Shopping-AI-Agent) |
-| Barbie Hangman: Dress Up & Guess | [barbie-hangman.vercel.app](https://barbie-hangman.vercel.app/) |
-| Valentine Candy Battle | [valentine-candy-battle.vercel.app](https://valentine-candy-battle.vercel.app/) |
+- **About Me**: who I am, plus my inspirations, favorite movies, and trips - this is a fun myspace inspired page I used to describe my personality and interests 
+- **Music**: a retro songs player listing my top 10 favorite songs - music is a big part of my life!
+- **Movies**: a retro media player listing my top 10 favorite watches - movies are an even bigger part of my life!!
+- **Resume**: work experience, academic experience, and skills as retro windows docx. You can download the resume as a `.docx`
+- **Projects**: one window per project, with screenshots, write-ups, and links. designed to look like application/cd players and wikipedia about pages
 
 ## Project structure
 
@@ -47,6 +33,7 @@ My role was creative director and product owner: I came up with the idea, made t
     │   └── Jordan_Duncan_Resume.docx
     └── images/
         ├── wallpaper.png
+        ├── icons/              # Favicon and home-screen icon
         ├── about/              # Headshot, avatar, stars, stickers, inspirations, trips
         ├── movies/             # Movie posters
         └── projects/           # Screenshots, one folder per project
