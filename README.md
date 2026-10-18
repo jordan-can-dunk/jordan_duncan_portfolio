@@ -6,9 +6,9 @@ A personal portfolio built as a pink, retro Windows-style desktop. Visitors doub
 
 ## How I built this
 
-The concept and design are mine. I knew from the start that I wanted my portfolio to feel like a pink, retro Windows desktop with windows, folders, a media player, and stickers. I built it with AI tools:
+I created my portfolio to feel like a pink, retro Windows desktop with windows, folders, a media player, and stickers because I wanted a more interactive, personal resume. I built it with AI tools:
 
-1. **Designed and coded with [Claude Design](https://claude.ai).** I described each screen, window, and interaction I had in mind and iterated with Claude Design until it matched what I'd pictured. Claude Design wrote all of the code.
+1. **Designed and coded with [Claude Design](https://claude.ai).** I described each screen, window, and interaction I had in mind to Claude Design. I used prompt engineering and pintrest reference pictures iterated with Claude Design until it matched what I'd pictured. Claude Design wrote all of the code.
 2. **Reviewed and cleaned up with [Claude Code](https://claude.com/claude-code).** I used Claude Code to check the exported app, remove unused files and drafts left behind by the export, organize the assets into a clear folder structure, and set up deployment on Vercel.
 
 My role was creative director and product owner: I came up with the idea, made the design decisions, wrote the content, and checked that the final result works and is maintainable.
